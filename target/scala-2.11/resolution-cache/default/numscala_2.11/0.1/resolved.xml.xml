@@ -4,7 +4,7 @@
 		module="numscala_2.11"
 		revision="0.1"
 		status="integration"
-		publication="25601120211934"
+		publication="20171121133600"
 	>
 		<description>
 		numscala
@@ -37,5 +37,6 @@
 		<dependency org="org.scalatest" name="scalatest_2.11" rev="2.1.6" conf="test->default(compile)"/>
 		<dependency org="org.scalanlp" name="breeze_2.11" rev="0.10" conf="compile->default(compile)"/>
 		<dependency org="org.scalanlp" name="breeze-natives_2.11" rev="0.10" conf="compile->default(compile)"/>
+		<dependency org="org.sameersingh.scalaplot" name="scalaplot" rev="0.0.4" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>

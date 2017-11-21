@@ -1,12 +1,15 @@
-package NonLinearModels
+package nonlinear
 
 import breeze.linalg.{DenseMatrix, DenseVector}
+
+import scala.collection.mutable.ListBuffer
 
 // One layer, can only perform Binary Classifications
 // Threshold should be almost always 0.5
 class Perceptron(learning_rate: Double = 0.1, threshold: Double = 0.5) {
 
   var weights: DenseVector[Double] = DenseVector[Double]()
+  var ls = new ListBuffer[Double]()
 
   def fit(train: DenseMatrix[Double], y: DenseVector[Int], maxEpoch: Int = 10000): Unit = {
     weights = DenseVector.zeros[Double](train.cols + 1)
@@ -19,6 +22,7 @@ class Perceptron(learning_rate: Double = 0.1, threshold: Double = 0.5) {
 
     while(epoch <= maxEpoch && error != 0) {
       println(s"Epoch $epoch, error = $error")
+      ls+=error
       error = 0
       for(j <- 0 until trainI.rows - 1) {
         val yPred = if((trainI(j, ::) * weights) > threshold) 1 else 0
@@ -30,7 +34,6 @@ class Perceptron(learning_rate: Double = 0.1, threshold: Double = 0.5) {
         }
       }
     }
-
     if(error == 0) println(s"Finished after $epoch epochs")
     else println(s"Max Epoch reached with $error error")
   }

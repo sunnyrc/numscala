@@ -1,7 +1,9 @@
 package test
 
-import NonLinearModels.Perceptron
+import nonlinear.Perceptron
+import org.sameersingh.scalaplot.jfreegraph.JFGraphPlotter
 import utilities.Utilities
+import org.sameersingh.scalaplot.{MemXYSeries, XYChart, XYData, XYDataImplicits}
 
 object PerceptronTest extends App{
   val (labels, train) = DigitLoader.load()
@@ -12,4 +14,13 @@ object PerceptronTest extends App{
   perceptron.fit(train, y)
   val yPred = perceptron.predict(train)
   println(s"Accuracy: ${Utilities.accuracy(y, yPred)}")
+  val x = (0 until 488).map(_.toDouble)
+  val yy: Seq[Double] = perceptron.ls
+//  println(x.length, yy.length)
+  val series = new MemXYSeries(x, yy, "Error")
+  val data = new XYData(series)
+  val chart = new XYChart("Epoch vs Error", data)
+  chart.showLegend = true
+  val plotter = new JFGraphPlotter(chart)
+  plotter.gui()
 }

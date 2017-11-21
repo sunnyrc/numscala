@@ -12,6 +12,7 @@ resolvers ++= Seq(
 libraryDependencies  ++= Seq(
   "org.scalatest"    %% "scalatest"      % "2.1.6"  % "test",
   "org.scalanlp"     %% "breeze"         % "0.10",
-  "org.scalanlp"     %% "breeze-natives" % "0.10"
+  "org.scalanlp"     %% "breeze-natives" % "0.10",
+  "org.sameersingh.scalaplot" % "scalaplot" % "0.0.4"
 )
 
