@@ -21,7 +21,7 @@ class Perceptron(learning_rate: Double = 0.1, threshold: Double = 0.5) {
     var error = -1
 
     while(epoch <= maxEpoch && error != 0) {
-      println(s"Epoch $epoch, error = $error")
+//      println(s"Epoch $epoch, error = $error")
       ls+=error
       error = 0
       for(j <- 0 until trainI.rows - 1) {

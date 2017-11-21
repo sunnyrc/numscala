@@ -4,7 +4,7 @@
 		module="numscala-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20171121132059"
+		publication="25601121175528"
 		e:sbtVersion="0.13" e:scalaVersion="2.10"
 	>
 		<description>
