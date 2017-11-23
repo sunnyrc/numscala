@@ -14,14 +14,6 @@ class NeuralNetwork(train: DenseMatrix[Double], labels: DenseVector[Int], hidden
   // Pad the training data (Thanks Aj Piti)
   val trainPadded: DenseMatrix[Double] = DenseMatrix.horzcat(DenseMatrix.ones[Double](train.rows, 1), train)
 
-  /*
-  To check gradients but don't think we need it
-   */
-  //  val LAYER_CHK = 0
-  //  val NUM_NODES_CHK = 3
-  //  val NUM_WEIGHTS_CHK = 60
-  //  val epsilon = 1e-6
-
   var weights: Array[DenseMatrix[Double]] = (0 to hiddenLayers).map(initLayers).toArray
 
   // Initialize all the layers
@@ -37,13 +29,14 @@ class NeuralNetwork(train: DenseMatrix[Double], labels: DenseVector[Int], hidden
   def binarizeData(xs: DenseVector[Int]): DenseMatrix[Double] = {
     val ys = DenseMatrix.zeros[Double](xs.length, outputSize)
     xs.data.zipWithIndex.foreach {
-      case (x, i) => ys.update(i, x - 2, 1.0)
+      case (x, i) => ys.update(i, x - 1, 1.0)
     }
     ys
   }
+
   object sigmoid extends UFunc with MappingUFunc{
     implicit object implDouble extends Impl [Double, Double]{
-      def apply(x: Double) = 1/(1 + scala.math.exp(-x))
+      def apply(x: Double): Double = 1/(1 + scala.math.exp(-x))
     }
   }
 
@@ -127,7 +120,7 @@ class NeuralNetwork(train: DenseMatrix[Double], labels: DenseVector[Int], hidden
     mat.map(_ :/ train.rows.toDouble)
   }
 
-  def train(learning_rate: Double = 0.8, maxEpoch: Int = 500, lambda: Double = 0.01): Unit = {
+  def train(learning_rate: Double = 0.8, maxEpoch: Int = 1000, lambda: Double = 0.05): Unit = {
     var cost_ = cost(trainPadded, weights, y, lambda = lambda)
 
     var epoch = 0
