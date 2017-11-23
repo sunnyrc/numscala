@@ -1,14 +1,23 @@
 package test
 
+import breeze.linalg.DenseVector
 import nonlinear.NeuralNetwork
+import utilities.Utilities
 object NeuralNetworkDemo extends App{
-  val (labels, train) = DigitLoader.load()
-  // Predict class 9 cos can only perform Binary Classification
-  val predLabel = 9
-  val y = labels.map(l => if(l == predLabel) 1 else 0)
-  val perceptron = new NeuralNetwork(train, labels, 2, 2)
-//  perceptron.fit(train, y)
-//  val yPred = perceptron.predict(train)
-//  println(s"Accuracy: ${Utilities.accuracy(y, yPred)}")
+  val (labels, all_data) = BigDigit.load()
+
+  val (train, train_y, test, test_y) = Utilities.train_test_split(all_data,labels)
+
+  // training set doesnt have one of each
+//  println(train_y.toArray.toSet)
+
+  /**
+    * 2 Hidden Layers
+    * 25 Nodes per layer
+    */
+  val neuralNetwork = new NeuralNetwork(all_data, labels, hiddenLayers = 2, nodesPerLayer = 25)
+  neuralNetwork.train()
+  val yPred = neuralNetwork.predict(all_data)
+  println("Accuracy: " + Utilities.accuracy(labels, DenseVector(yPred:_*)))
 
 }
