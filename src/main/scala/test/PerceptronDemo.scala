@@ -7,7 +7,7 @@ import org.sameersingh.scalaplot.jfreegraph.JFGraphPlotter
 import utilities.Utilities
 import org.sameersingh.scalaplot.{MemXYSeries, XYChart, XYData}
 
-object PerceptronTest extends App{
+object PerceptronDemo extends App{
   val (labels, all_data): (DenseVector[Int], DenseMatrix[Double]) = DigitLoader.load()
 
   // Predict class 9 cos can only perform Binary Classifications

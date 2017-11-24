@@ -8,7 +8,7 @@ import breeze.stats.distributions.Rand
 class NeuralNetwork(train: DenseMatrix[Double], labels: DenseVector[Int], hiddenLayers: Int, nodesPerLayer: Int, e: Double = 1e-5, func: String = "sigmoid") {
 
   val inputSize: Int = train.cols
-  val outputSize: Int = labels.toArray.toSet.size // 10
+  val outputSize: Int = labels.toArray.toSet.size
   val y: DenseMatrix[Double] = binarizeData(labels)
 
   // Pad the training data (Thanks Aj Piti)
@@ -39,7 +39,6 @@ class NeuralNetwork(train: DenseMatrix[Double], labels: DenseVector[Int], hidden
       def apply(x: Double): Double = 1/(1 + scala.math.exp(-x))
     }
   }
-
 
   //  def chooseFunction(x: Double) = {
 //    if (func == "sigmoid") sigmoid(x)
