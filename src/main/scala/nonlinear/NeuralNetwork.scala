@@ -1,11 +1,13 @@
 package nonlinear
 
+import java.io.File
+
 import breeze.generic.{MappingUFunc, UFunc}
-import breeze.linalg.{Axis, DenseMatrix, DenseVector, max, sum}
+import breeze.linalg.{Axis, DenseMatrix, DenseVector, csvread, csvwrite, max, sum}
 import breeze.numerics.{log, pow}
 import breeze.stats.distributions.Rand
 
-class NeuralNetwork(train: DenseMatrix[Double], labels: DenseVector[Int], hiddenLayers: Int, nodesPerLayer: Int, e: Double = 1e-5, func: String = "sigmoid") {
+class NeuralNetwork(name: String = "test",train: DenseMatrix[Double], labels: DenseVector[Int], hiddenLayers: Int, nodesPerLayer: Int, e: Double = 1e-5, func: String = "sigmoid") {
 
   val inputSize: Int = train.cols
   val outputSize: Int = labels.toArray.toSet.size
@@ -34,16 +36,18 @@ class NeuralNetwork(train: DenseMatrix[Double], labels: DenseVector[Int], hidden
     ys
   }
 
-  object sigmoid extends UFunc with MappingUFunc{
-    implicit object implDouble extends Impl [Double, Double]{
-      def apply(x: Double): Double = 1/(1 + scala.math.exp(-x))
-    }
-  }
 
-  //  def chooseFunction(x: Double) = {
+//  def chooseFunction(x: Double) = {
 //    if (func == "sigmoid") sigmoid(x)
 //    else if (func == "relu") ReLU(x)
 //  }
+
+  object sigmoid extends UFunc with MappingUFunc{
+
+    implicit object implDouble extends Impl [Double, Double]{
+      def apply(x: Double) = 1/(1 + scala.math.exp(-x))
+    }
+  }
 
   // Log Loss function
   def loss(y: DenseVector[Double], yPred: DenseVector[Double]): DenseVector[Double] = {
@@ -119,7 +123,10 @@ class NeuralNetwork(train: DenseMatrix[Double], labels: DenseVector[Int], hidden
     mat.map(_ :/ train.rows.toDouble)
   }
 
-  def train(learning_rate: Double = 0.8, maxEpoch: Int = 1000, lambda: Double = 0.05): Unit = {
+  def train(learning_rate: Double = 0.8, maxEpoch: Int = 1000, lambda: Double = 0.05, read_weights: Boolean = false): Unit = {
+
+    if (read_weights) weights = readWeights(name)
+
     var cost_ = cost(trainPadded, weights, y, lambda = lambda)
 
     var epoch = 0
@@ -141,10 +148,22 @@ class NeuralNetwork(train: DenseMatrix[Double], labels: DenseVector[Int], hidden
       if (epoch % 100 == 0) {
         val y: List[Int] = predict(train)
         println(s"Accuracy at epoch $epoch: " + utilities.Utilities.accuracy(labels, DenseVector(y: _*)))
+        saveWeights(weights)
       }
       epoch += 1
     }
 
+    saveWeights(weights)
+  }
+
+  def saveWeights(weights: Array[DenseMatrix[Double]]): Unit ={
+    weights.zipWithIndex.foreach{
+      case (ws, i) =>  csvwrite(new File(s"C:/Users/Administrator/IdeaProjects/numscala/src/main/scala/test/models/$name-theta${i+1}.csv"), ws)
+    }
+  }
+
+  def readWeights(name: String): Array[DenseMatrix[Double]] ={
+    (0 to hiddenLayers).map(i => csvread(new File(s"C:/Users/Administrator/IdeaProjects/numscala/src/main/scala/test/models/$name-theta${i+1}.csv"))).toArray
   }
 
   def predict(test: DenseMatrix[Double]): List[Int] = {

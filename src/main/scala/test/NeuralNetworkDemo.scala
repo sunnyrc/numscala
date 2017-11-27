@@ -13,8 +13,9 @@ object NeuralNetworkDemo extends App{
     * 2 Hidden Layers
     * 25 Nodes per layer
     */
-  val neuralNetwork = new NeuralNetwork(all_data, labels, hiddenLayers = 2, nodesPerLayer = 25)
-  neuralNetwork.train(maxEpoch = 500)
+  val neuralNetwork = new NeuralNetwork(name = "BigDigit",all_data, labels, hiddenLayers = 2, nodesPerLayer = 25)
+  neuralNetwork.train(maxEpoch = 1, read_weights = true)
+//  neuralNetwork.train(maxEpoch = 500)
   val yPred = neuralNetwork.predict(test)
   println("Accuracy: " + Utilities.accuracy(test_y, DenseVector(yPred:_*)))
 

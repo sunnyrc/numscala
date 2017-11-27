@@ -2,8 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ffeee08-9692-4b58-832a-5f5543607232" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$3.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$4.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$5$$anonfun$apply$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$5$$anonfun$apply$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$5.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$backpropagate$1$$anonfun$apply$mcVI$sp$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$backpropagate$1$$anonfun$apply$mcVI$sp$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$backpropagate$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$backpropagate$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$backpropagate$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$backpropagate$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$backpropagate$3.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$backpropagate$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$binarizeData$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$binarizeData$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$cost$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$cost$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$makeZeroMatrix$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$makeZeroMatrix$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$predict$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$predict$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$train$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$train$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$sigmoid$.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$sigmoid$.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$sigmoid$implDouble$.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$sigmoid$implDouble$.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/test/NeuralNetworkDemo$.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/test/NeuralNetworkDemo$.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/utilities/Utilities.scala" afterPath="$PROJECT_DIR$/src/main/scala/utilities/Utilities.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/nonlinear/NeuralNetwork.scala" afterPath="$PROJECT_DIR$/src/main/scala/nonlinear/NeuralNetwork.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/test/NeuralNetworkDemo.scala" afterPath="$PROJECT_DIR$/src/main/scala/test/NeuralNetworkDemo.scala" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -36,45 +57,51 @@
       <file leaf-file-name="NeuralNetwork.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/nonlinear/NeuralNetwork.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-139">
-              <caret line="126" column="41" lean-forward="false" selection-start-line="126" selection-start-column="41" selection-end-line="126" selection-end-column="41" />
+            <state relative-caret-position="2975">
+              <caret line="180" column="0" lean-forward="false" selection-start-line="180" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
+              <folding>
+                <element signature="e#19#38#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReLU.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/activationfunctions/ReLU.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="44" lean-forward="false" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LogisticRegression.scala" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/linearmodels/LogisticRegression.scala">
+      <file leaf-file-name="sigmoid.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/activationfunctions/sigmoid.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-411">
-              <caret line="23" column="26" lean-forward="true" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
-              <folding>
-                <element signature="e#22#74#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="34">
+              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="7" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LogisticRegressionDemo.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/test/LogisticRegressionDemo.scala">
+      <file leaf-file-name="ActivationFunctions.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/ActivationFunctions.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-              <folding>
-                <element signature="e#14#53#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="34">
+              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="6" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Utilities.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/utilities/Utilities.scala">
+      <file leaf-file-name="NeuralNetworkDemo.scala" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/test/NeuralNetworkDemo.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="15" column="49" lean-forward="false" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
-              <folding>
-                <element signature="e#19#66#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="255">
+              <caret line="17" column="39" lean-forward="true" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -115,8 +142,6 @@
         <option value="$PROJECT_DIR$/src/main/scala/nonlinear/Perceptron.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/test/PerceptronTest.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/test/BigDigit.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/nonlinear/NeuralNetwork.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/test/NeuralNetworkDemo.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/test/PerceptronDemo.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/linearmodels/LinearRegression.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/test/package.scala" />
@@ -125,6 +150,12 @@
         <option value="$PROJECT_DIR$/src/main/scala/utilities/Utilities.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/test/LogisticRegressionDemo.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/linearmodels/LogisticRegression.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/test/NeuralNetworkDemo.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/activationfunctions/package.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/activationfunctions/tanh.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/activationfunctions/ReLU.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/activationfunctions/sigmoid.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/nonlinear/NeuralNetwork.scala" />
       </list>
     </option>
   </component>
@@ -136,8 +167,8 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-9" />
-    <option name="width" value="1082" />
-    <option name="height" value="1048" />
+    <option name="width" value="1004" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -155,7 +186,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -187,39 +220,13 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="scala" type="462c0819:PsiDirectoryNode" />
-              <item name="linearmodels" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="numscala" type="b2602c69:ProjectViewProjectNode" />
-              <item name="numscala" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="scala" type="462c0819:PsiDirectoryNode" />
-              <item name="nonlinear" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="numscala" type="b2602c69:ProjectViewProjectNode" />
-              <item name="numscala" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="scala" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="numscala" type="b2602c69:ProjectViewProjectNode" />
-              <item name="numscala" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="scala" type="462c0819:PsiDirectoryNode" />
-              <item name="utilities" type="462c0819:PsiDirectoryNode" />
+              <item name="activationfunctions" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -246,7 +253,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.LogisticRegressionDemo">
+  <component name="RunManager" selected="Application.NeuralNetworkDemo">
     <configuration name="LinearRegressionDemo" type="Application" factoryName="Application" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -753,9 +760,9 @@
     </list>
     <recent_temporary>
       <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Application.LogisticRegressionDemo" />
-        <item index="1" class="java.lang.String" itemvalue="Application.LinearRegressionDemo" />
-        <item index="2" class="java.lang.String" itemvalue="Application.NeuralNetworkDemo" />
+        <item index="0" class="java.lang.String" itemvalue="Application.NeuralNetworkDemo" />
+        <item index="1" class="java.lang.String" itemvalue="Application.LogisticRegressionDemo" />
+        <item index="2" class="java.lang.String" itemvalue="Application.LinearRegressionDemo" />
         <item index="3" class="java.lang.String" itemvalue="Application.PerceptronTest" />
       </list>
     </recent_temporary>
@@ -821,14 +828,17 @@
       <workItem from="1511591493669" duration="1060000" />
       <workItem from="1511594506900" duration="8000" />
       <workItem from="1511603514230" duration="3180000" />
+      <workItem from="1511684775476" duration="8128000" />
+      <workItem from="1511705783118" duration="58000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53781000" />
+    <option name="totallyTimeSpent" value="61967000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -839,21 +849,20 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3228261" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3228261" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16897655" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17217484" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="sbt-shell-toolwindow" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33695653" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39956093" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39956093" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -861,6 +870,7 @@
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33695653" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -885,7 +895,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#19#62#0" expanded="false" />
+            <element signature="e#19#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -895,7 +905,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#19#62#0" expanded="false" />
+            <element signature="e#19#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -905,7 +915,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#19#62#0" expanded="false" />
+            <element signature="e#19#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -915,7 +925,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#19#62#0" expanded="false" />
+            <element signature="e#19#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -925,17 +935,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#19#62#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/nonlinear/NeuralNetwork.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#19#62#0" expanded="false" />
+            <element signature="e#19#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -952,7 +952,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#19#62#0" expanded="false" />
+            <element signature="e#19#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -961,7 +961,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="23" column="34" lean-forward="true" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -977,7 +976,7 @@
         <state relative-caret-position="2482">
           <caret line="146" column="28" lean-forward="true" selection-start-line="146" selection-start-column="28" selection-end-line="146" selection-end-column="28" />
           <folding>
-            <element signature="e#19#62#0" expanded="false" />
+            <element signature="e#19#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -986,7 +985,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1002,7 +1000,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#19#62#0" expanded="false" />
+            <element signature="e#19#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1011,7 +1009,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
           <caret line="7" column="11" lean-forward="false" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1034,7 +1031,7 @@
         <state relative-caret-position="1122">
           <caret line="69" column="41" lean-forward="false" selection-start-line="69" selection-start-column="41" selection-end-line="69" selection-end-column="41" />
           <folding>
-            <element signature="e#19#62#0" expanded="false" />
+            <element signature="e#19#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1071,7 +1068,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="13" lean-forward="true" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1100,7 +1096,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
           <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1169,13 +1164,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/ActivationFunctions.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/test/BigDigit.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -1211,49 +1199,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/test/NeuralNetworkDemo.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="2" lean-forward="true" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/utilities/Utilities.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
+        <state relative-caret-position="238">
           <caret line="15" column="49" lean-forward="false" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
-          <folding>
-            <element signature="e#19#66#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/nonlinear/NeuralNetwork.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-139">
-          <caret line="126" column="41" lean-forward="false" selection-start-line="126" selection-start-column="41" selection-end-line="126" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/test/LogisticRegressionDemo.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding>
-            <element signature="e#14#53#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="374">
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/linearmodels/LogisticRegression.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-411">
-          <caret line="23" column="26" lean-forward="true" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+        <state relative-caret-position="17">
+          <caret line="23" column="26" lean-forward="false" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/activationfunctions/tanh.scala" />
+    <entry file="file://$PROJECT_DIR$/src/main/scala/ActivationFunctions.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="6" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/activationfunctions/ReLU.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="44" lean-forward="false" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/activationfunctions/sigmoid.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="7" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/nonlinear/NeuralNetwork.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2975">
+          <caret line="180" column="0" lean-forward="false" selection-start-line="180" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
           <folding>
-            <element signature="e#22#74#0" expanded="true" />
+            <element signature="e#19#38#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/test/NeuralNetworkDemo.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="39" lean-forward="true" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>
