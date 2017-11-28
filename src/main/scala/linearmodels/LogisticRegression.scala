@@ -11,7 +11,7 @@ class LogisticRegression {
   val MAX: Double = 20.0
   val MIN: Double = -20.0
 
-  def h(weights: DenseVector[Double], x: DenseMatrix[Double]): DenseVector[Double] = {
+  def thetha(weights: DenseVector[Double], x: DenseMatrix[Double]): DenseVector[Double] = {
     val ones = DenseVector.ones[Double](x.rows)
 
     // Prevent overflow cos of Double's precision range
@@ -24,37 +24,36 @@ class LogisticRegression {
     ones / (exp(z0) + 1.0)
   }
 
-  def cost(t1: DenseVector[Double], y: DenseVector[Double], yPred: DenseVector[Double], lambda: Double): Double = {
+  def cost(t1: DenseVector[Double], y: DenseVector[Double], yPred: DenseVector[Double]): Double = {
     val m = y.length
-    (-1.0/m) * sum(logloss(y, yPred)) + (lambda / (2*m)) * sum(t1 * t1.t)
+    (-1.0/m) * sum(logloss(y, yPred)) +  sum(t1 * t1.t)
   }
 
-  def fit(train: DenseMatrix[Double], y: DenseVector[Double], learning_rate: Double = .1, ep: Double = 0.001, C: Double = 1.0, maxIter: Int = 10000): Unit = {
+  def fit(train: DenseMatrix[Double], y: DenseVector[Double], learning_rate: Double = .1, ep: Double = 0.001, maxIter: Int = 10000): Unit = {
 
     var weights = DenseVector.zeros[Double](train.cols + 1)
     val ones = DenseMatrix.ones[Double](y.length, 1)
     val paddedTrain = DenseMatrix.horzcat(ones, train)
 
-    val lambda = 1.0/C
 
     val m = train.rows
-    var yPred = h(weights, paddedTrain)
+    var yPred = thetha(weights, paddedTrain)
     var err = yPred - y
-    var e = cost(weights, y, yPred, lambda)
+    var e = cost(weights, y, yPred)
     var J = 100.0
     var nIter = 0
 
+    // while difference between old error and new error is greater than ep given  (i.e progress)
     while(abs(J - e) > ep && nIter <= maxIter) {
-
       nIter += 1
       J = e
       // that weird sign is element wise multiply
-      val reg = weights :* (lambda / m)
+      val reg = weights
       // that weird sign is element wise minus
       weights = weights :- (((paddedTrain.t * err) / m.toDouble) + reg) * learning_rate
-      yPred = h(weights, paddedTrain)
+      yPred = thetha(weights, paddedTrain)
       err =  yPred - y
-      e = cost(weights, y, yPred, lambda)
+      e = cost(weights, y, yPred)
     }
 
     println(s"Converged in $nIter iterations")
@@ -64,7 +63,7 @@ class LogisticRegression {
   def predictProbability(test: DenseMatrix[Double]): DenseVector[Double] = {
     val b1 = DenseMatrix.ones[Double](test.rows, 1)
     val testI = DenseMatrix.horzcat(b1, test)
-    h(ans, testI)
+    thetha(ans, testI)
   }
 
   def predict(test: DenseMatrix[Double]): DenseVector[Double] = {

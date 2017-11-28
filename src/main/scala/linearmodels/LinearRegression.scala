@@ -6,18 +6,18 @@ class LinearRegression {
 
   var ans: DenseVector[Double] = DenseVector[Double]()
 
-  def fit(train: DenseMatrix[Double], labels: DenseVector[Double], C: Double = 1.0): Unit ={
+  def fit(train: DenseMatrix[Double], labels: DenseVector[Double]): Unit ={
     val ones = DenseMatrix.ones[Double](labels.length, 1)
 
-    // Pad the train
+    // Pad the train cos easier to computer (Aj piti said i think)
     val paddedTrain = DenseMatrix.horzcat(ones, train)
-    // Create a Matrix with ones along the diagonal axis
 
+    // Create a Matrix with ones along the diagonal axis
     val diag = DenseMatrix.eye[Double](paddedTrain.cols)
 
-    val lambda = 1 / C
-    val times = diag * lambda
+    val times = diag
 
+    // Find the line of best fit
     ans = inv(paddedTrain.t * paddedTrain + times) * (paddedTrain.t * labels)
   }
 

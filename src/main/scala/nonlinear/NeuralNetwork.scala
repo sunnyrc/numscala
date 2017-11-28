@@ -32,6 +32,7 @@ class NeuralNetwork(name: String = "test",train: DenseMatrix[Double], labels: De
     case _ => DenseMatrix.rand(nodesPerLayer, nodesPerLayer + 1, rand = Rand.gaussian)
   }
 
+  // Put one at the label column in that row
   def binarizeData(xs: DenseVector[Int]): DenseMatrix[Double] = {
     val ys = DenseMatrix.zeros[Double](xs.length, outputSize)
     xs.data.zipWithIndex.foreach {
@@ -60,19 +61,16 @@ class NeuralNetwork(name: String = "test",train: DenseMatrix[Double], labels: De
     (-y :* log(yPred)) :- ((-y + 1.0) :* log(-yPred + 1.0))
   }
 
-  def h(x: DenseVector[Double], thetas: Array[DenseMatrix[Double]], vecs: List[DenseVector[Double]] = List()): (DenseVector[Double], List[DenseVector[Double]]) = {
+  def thetha(x: DenseVector[Double], thetas: Array[DenseMatrix[Double]], vecs: List[DenseVector[Double]] = List()): (DenseVector[Double], List[DenseVector[Double]]) = {
     if (thetas.isEmpty) (x(1 to -1), vecs)
     else {
       val a: Array[Double] = chooseFunction(thetas.head * x).toArray
-//      println(a.toVector)
-      h(DenseVector(1.0 +: a), thetas.tail, vecs :+ x(1 to -1))
+      thetha(DenseVector(1.0 +: a), thetas.tail, vecs :+ x(1 to -1))
     }
   }
 
-  def h(x: DenseMatrix[Double], thetas: Array[DenseMatrix[Double]]): DenseMatrix[Double] = {
-    if (thetas.isEmpty) {
-      x(1 to -1, ::).t
-    }
+  def thetha(x: DenseMatrix[Double], thetas: Array[DenseMatrix[Double]]): DenseMatrix[Double] = {
+    if (thetas.isEmpty) x(1 to -1, ::).t
     else {
       var pad: DenseMatrix[Double] =
         if (thetas.length == weights.length) {
@@ -82,7 +80,7 @@ class NeuralNetwork(name: String = "test",train: DenseMatrix[Double], labels: De
           chooseFunction(thetas.head * x)
         }
       pad = DenseMatrix.vertcat[Double](DenseMatrix.ones[Double](1, pad.cols), pad)
-      h(pad, thetas.tail)
+      thetha(pad, thetas.tail)
     }
   }
 
@@ -93,7 +91,7 @@ class NeuralNetwork(name: String = "test",train: DenseMatrix[Double], labels: De
   def cost(x: DenseMatrix[Double], thetas: Array[DenseMatrix[Double]], y: DenseMatrix[Double], regularize: Boolean = true, lambda: Double = 0.8): Double = {
     val actualCost = (1.0 / x.rows) * sum(
       for {i <- 0 until x.rows - 1
-           yPred = h(x(i, ::).inner, thetas)._1
+           yPred = thetha(x(i, ::).inner, thetas)._1
            yi = y(i, ::).inner
       }
         yield sum(loss(yi, yPred)))
@@ -113,7 +111,7 @@ class NeuralNetwork(name: String = "test",train: DenseMatrix[Double], labels: De
 
     for (i <- 0 until train.rows) {
       // get actual predictions
-      var (pred, vecs) = h(train(i, ::).inner, weights)
+      var (pred, vecs) = thetha(train(i, ::).inner, weights)
       var diff = pred - xs(i, ::).inner
 
       // reverse loop
@@ -166,19 +164,19 @@ class NeuralNetwork(name: String = "test",train: DenseMatrix[Double], labels: De
 
   def saveWeights(weights: Array[DenseMatrix[Double]]): Unit ={
     weights.zipWithIndex.foreach{
-      case (ws, i) =>  csvwrite(new File(s"C:/Users/sanch/Desktop/numscala/src/main/scala/test/models/$name-theta${i+1}.csv"), ws)
+      case (ws, i) =>  csvwrite(new File(s"C:/Users/Administrator/IdeaProjects/numscala/src/main/scala/test/models/$name-theta${i+1}.csv"), ws)
     }
   }
 
   def readWeights(name: String): Array[DenseMatrix[Double]] ={
-    (0 to hiddenLayers).map(i => csvread(new File(s"C:/Users/sanch/Desktop/numscala/src/main/scala/test/models/$name-theta${i+1}.csv"))).toArray
+    (0 to hiddenLayers).map(i => csvread(new File(s"C:/Users/Administrator/IdeaProjects/numscala/src/main/scala/test//models/$name-theta${i+1}.csv"))).toArray
   }
 
 
   def predict(test: DenseMatrix[Double]): List[Int] = {
     // pad the test
     val paddedTest = DenseMatrix.horzcat(DenseMatrix.ones[Double](test.rows, 1), test)
-    val yPred = h(paddedTest, weights)
+    val yPred = thetha(paddedTest, weights)
 
     val predictions =
       for {i <- 0 until yPred.rows

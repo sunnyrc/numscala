@@ -12,10 +12,12 @@ class Perceptron(learning_rate: Double = 0.1, threshold: Double = 0.5) {
   var ls = new ListBuffer[Double]()
 
   def fit(train: DenseMatrix[Double], y: DenseVector[Int], maxEpoch: Int = 10000): Unit = {
+
     weights = DenseVector.zeros[Double](train.cols + 1)
     var epoch = 1
 
     val b = DenseMatrix.ones[Double](y.length, 1)
+
     // Padding
     val trainI = DenseMatrix.horzcat(b, train)
     var error = -1
