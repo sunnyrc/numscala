@@ -1,3 +1,4 @@
+package activationfunctions
 import breeze.generic.{MappingUFunc, UFunc}
 
 object sigmoid extends UFunc with MappingUFunc{

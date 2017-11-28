@@ -2,16 +2,20 @@ package nonlinear
 
 import java.io.File
 
-import breeze.generic.{MappingUFunc, UFunc}
+import activationfunctions.{sigmoid, softplus}
 import breeze.linalg.{Axis, DenseMatrix, DenseVector, csvread, csvwrite, max, sum}
-import breeze.numerics.{log, pow}
+import breeze.numerics.{log, pow, tanh}
 import breeze.stats.distributions.Rand
 
-class NeuralNetwork(name: String = "test",train: DenseMatrix[Double], labels: DenseVector[Int], hiddenLayers: Int, nodesPerLayer: Int, e: Double = 1e-5, func: String = "sigmoid") {
+import scala.collection.mutable.ListBuffer
+
+class NeuralNetwork(name: String = "test",train: DenseMatrix[Double], labels: DenseVector[Int], hiddenLayers: Int, nodesPerLayer: Int, func: String = "sigmoid" ,e: Double = 1e-5) {
 
   val inputSize: Int = train.cols
   val outputSize: Int = labels.toArray.toSet.size
   val y: DenseMatrix[Double] = binarizeData(labels)
+
+  var ls = new ListBuffer[Double]()
 
   // Pad the training data (Thanks Aj Piti)
   val trainPadded: DenseMatrix[Double] = DenseMatrix.horzcat(DenseMatrix.ones[Double](train.rows, 1), train)
@@ -37,16 +41,18 @@ class NeuralNetwork(name: String = "test",train: DenseMatrix[Double], labels: De
   }
 
 
-//  def chooseFunction(x: Double) = {
-//    if (func == "sigmoid") sigmoid(x)
-//    else if (func == "relu") ReLU(x)
-//  }
+  def chooseFunction(x: DenseVector[Double]): DenseVector[Double] = {
+    if (func == "sigmoid") sigmoid(x)
+    else if (func == "softplus") softplus(x)
+    else if (func == "tanh") tanh(x)
+    else throw new Exception
+  }
 
-  object sigmoid extends UFunc with MappingUFunc{
-
-    implicit object implDouble extends Impl [Double, Double]{
-      def apply(x: Double) = 1/(1 + scala.math.exp(-x))
-    }
+  def chooseFunction(x: DenseMatrix[Double]): DenseMatrix[Double] = {
+    if (func == "sigmoid") sigmoid(x)
+    else if (func == "softplus") softplus(x)
+    else if (func == "tanh") tanh(x)
+    else throw new Exception
   }
 
   // Log Loss function
@@ -57,7 +63,8 @@ class NeuralNetwork(name: String = "test",train: DenseMatrix[Double], labels: De
   def h(x: DenseVector[Double], thetas: Array[DenseMatrix[Double]], vecs: List[DenseVector[Double]] = List()): (DenseVector[Double], List[DenseVector[Double]]) = {
     if (thetas.isEmpty) (x(1 to -1), vecs)
     else {
-      val a = sigmoid(thetas.head * x).toArray
+      val a: Array[Double] = chooseFunction(thetas.head * x).toArray
+//      println(a.toVector)
       h(DenseVector(1.0 +: a), thetas.tail, vecs :+ x(1 to -1))
     }
   }
@@ -69,10 +76,10 @@ class NeuralNetwork(name: String = "test",train: DenseMatrix[Double], labels: De
     else {
       var pad: DenseMatrix[Double] =
         if (thetas.length == weights.length) {
-          sigmoid(thetas.head * x.t)
+          chooseFunction(thetas.head * x.t)
         }
         else {
-          sigmoid(thetas.head * x)
+          chooseFunction(thetas.head * x)
         }
       pad = DenseMatrix.vertcat[Double](DenseMatrix.ones[Double](1, pad.cols), pad)
       h(pad, thetas.tail)
@@ -135,6 +142,7 @@ class NeuralNetwork(name: String = "test",train: DenseMatrix[Double], labels: De
     while (epoch < maxEpoch) {
       val mat = backpropagate(trainPadded, y, weights)
 
+      ls+=cost_
 
       for (l <- 0 until weights.length - 1) {
         weights(l)(::, 0) := mat(l)(::, 0)
@@ -158,13 +166,14 @@ class NeuralNetwork(name: String = "test",train: DenseMatrix[Double], labels: De
 
   def saveWeights(weights: Array[DenseMatrix[Double]]): Unit ={
     weights.zipWithIndex.foreach{
-      case (ws, i) =>  csvwrite(new File(s"C:/Users/Administrator/IdeaProjects/numscala/src/main/scala/test/models/$name-theta${i+1}.csv"), ws)
+      case (ws, i) =>  csvwrite(new File(s"C:/Users/sanch/Desktop/numscala/src/main/scala/test/models/$name-theta${i+1}.csv"), ws)
     }
   }
 
   def readWeights(name: String): Array[DenseMatrix[Double]] ={
-    (0 to hiddenLayers).map(i => csvread(new File(s"C:/Users/Administrator/IdeaProjects/numscala/src/main/scala/test/models/$name-theta${i+1}.csv"))).toArray
+    (0 to hiddenLayers).map(i => csvread(new File(s"C:/Users/sanch/Desktop/numscala/src/main/scala/test/models/$name-theta${i+1}.csv"))).toArray
   }
+
 
   def predict(test: DenseMatrix[Double]): List[Int] = {
     // pad the test
