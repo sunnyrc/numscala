@@ -22,7 +22,7 @@ object PerceptronDemo extends App{
 
   val yy: Seq[Double] = perceptron.ls
   val x = yy.indices.map(_.toDouble)
-
+  println(yy.length)
   val series = new MemXYSeries(x, yy, "Error")
   val data = new XYData(series)
   val chart = new XYChart("Epoch vs Error", data)
