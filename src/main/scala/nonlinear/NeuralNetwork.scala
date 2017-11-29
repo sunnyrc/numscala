@@ -164,12 +164,12 @@ class NeuralNetwork(name: String = "test",train: DenseMatrix[Double], labels: De
 
   def saveWeights(weights: Array[DenseMatrix[Double]]): Unit ={
     weights.zipWithIndex.foreach{
-      case (ws, i) =>  csvwrite(new File(s"C:/Users/Administrator/IdeaProjects/numscala/src/main/scala/test/models/$name-theta${i+1}.csv"), ws)
+      case (ws, i) =>  csvwrite(new File(s"D:/Mahidol/OPL/numscala/src/main/scala/test/models/$name-theta${i+1}.csv"), ws)
     }
   }
 
   def readWeights(name: String): Array[DenseMatrix[Double]] ={
-    (0 to hiddenLayers).map(i => csvread(new File(s"C:/Users/Administrator/IdeaProjects/numscala/src/main/scala/test//models/$name-theta${i+1}.csv"))).toArray
+    (0 to hiddenLayers).map(i => csvread(new File(s"D:/Mahidol/OPL/numscala/src/main/scala/test//models/$name-theta${i+1}.csv"))).toArray
   }
 
 
