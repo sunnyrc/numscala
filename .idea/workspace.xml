@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5ffeee08-9692-4b58-832a-5f5543607232" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/numscala/ui/GUI/NonLinearModelUI.java" afterPath="$PROJECT_DIR$/src/main/java/numscala/ui/GUI/NonLinearModelUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/test/models/test-theta1.csv" afterPath="$PROJECT_DIR$/src/main/scala/test/models/test-theta1.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/test/models/test-theta2.csv" afterPath="$PROJECT_DIR$/src/main/scala/test/models/test-theta2.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/test/models/test-theta3.csv" afterPath="$PROJECT_DIR$/src/main/scala/test/models/test-theta3.csv" />
     </list>
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -102,7 +99,7 @@
       <file leaf-file-name="MenuUI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/numscala/ui/GUI/MenuUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-543">
+            <state relative-caret-position="-682">
               <caret line="63" column="40" lean-forward="true" selection-start-line="63" selection-start-column="40" selection-end-line="63" selection-end-column="40" />
               <folding />
             </state>
@@ -112,8 +109,8 @@
       <file leaf-file-name="NonLinearModelUI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/numscala/ui/GUI/NonLinearModelUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="99" column="55" lean-forward="false" selection-start-line="99" selection-start-column="55" selection-end-line="99" selection-end-column="55" />
+            <state relative-caret-position="228">
+              <caret line="176" column="38" lean-forward="false" selection-start-line="176" selection-start-column="38" selection-end-line="176" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -953,7 +950,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5929000" />
+    <option name="totallyTimeSpent" value="6462000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
@@ -1336,7 +1333,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/numscala/ui/GUI/MenuUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-543">
+        <state relative-caret-position="-682">
           <caret line="63" column="40" lean-forward="true" selection-start-line="63" selection-start-column="40" selection-end-line="63" selection-end-column="40" />
           <folding />
         </state>
@@ -1344,8 +1341,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/numscala/ui/GUI/NonLinearModelUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="99" column="55" lean-forward="false" selection-start-line="99" selection-start-column="55" selection-end-line="99" selection-end-column="55" />
+        <state relative-caret-position="228">
+          <caret line="176" column="38" lean-forward="false" selection-start-line="176" selection-start-column="38" selection-end-line="176" selection-end-column="38" />
           <folding />
         </state>
       </provider>

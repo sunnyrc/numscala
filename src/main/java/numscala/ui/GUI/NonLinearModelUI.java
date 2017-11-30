@@ -174,7 +174,7 @@ public class NonLinearModelUI {
         grid.add(lineChart, 0, 0);
 
         // Accuracy
-        grid.add(new Label(dataWrapper.getParam() + ": " + accuracy), 1, 0);
+        grid.add(new Label("Accuracy: " + ": " + accuracy), 1, 0);
 
         // Mode switch button
         Button modeSwitch = new Button();
