@@ -97,7 +97,7 @@ public class NonLinearModelUI {
         grid.setHalignment(back, HPos.CENTER);
 
         // Accuracy
-        grid.add(new Label("Accuracy: " + accuracy), 1, 0);
+        grid.add(new Label(dataWrapper.getParam() + ": " + accuracy), 1, 0);
 
         // Epoch vs Error Side information
         for (XYChart.Data<Number, Number> data: series.getData()) {
