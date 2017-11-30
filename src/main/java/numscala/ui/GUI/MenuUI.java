@@ -40,32 +40,18 @@ public class MenuUI {
         grid.setVgap(10);
         grid.setMaxSize(Constant.PARENT_PREF_WIDTH, Constant.PARENT_PREF_HEIGHT);
 
-        Button linearRegression = new Button();
-        linearRegression.setText("Linear Regression");
-        linearRegression.setPrefSize(Constant.MENU_PREF_WIDTH,Constant.MENU_PREF_WIDTH);
-        linearRegression.setOnAction(e -> handleMenuSelection(primaryStage, linearRegression.getText()));
-        grid.add(linearRegression, 0, 0);
-        grid.setHalignment(linearRegression, HPos.CENTER);
-
-        Button logisticRegression = new Button();
-        logisticRegression.setText("Logistic Regression");
-        logisticRegression.setPrefSize(Constant.MENU_PREF_WIDTH,Constant.MENU_PREF_WIDTH);
-        logisticRegression.setOnAction(e -> handleMenuSelection(primaryStage, logisticRegression.getText()));
-        grid.add(logisticRegression, 0, 1);
-        grid.setHalignment(logisticRegression, HPos.CENTER);
-
         Button neuralNetwork = new Button();
         neuralNetwork.setText("Neural Network");
         neuralNetwork.setPrefSize(Constant.MENU_PREF_WIDTH,Constant.MENU_PREF_WIDTH);
         neuralNetwork.setOnAction(e -> handleMenuSelection(primaryStage, neuralNetwork.getText()));
-        grid.add(neuralNetwork, 0, 2);
+        grid.add(neuralNetwork, 0, 0);
         grid.setHalignment(neuralNetwork, HPos.CENTER);
 
         Button perceptron = new Button();
         perceptron.setText("Perceptron");
         perceptron.setPrefSize(Constant.MENU_PREF_WIDTH,Constant.MENU_PREF_WIDTH);
         perceptron.setOnAction(e -> handleMenuSelection(primaryStage, perceptron.getText()));
-        grid.add(perceptron, 0, 3);
+        grid.add(perceptron, 0, 1);
         grid.setHalignment(perceptron, HPos.CENTER);
 
         root.getChildren().addAll(grid);
@@ -79,13 +65,9 @@ public class MenuUI {
 
     public void handleMenuSelection(Stage primaryStage, String buttonName) {
         LineChartUI lineChartUI = new LineChartUI();
-        Tuple2<Seq<Object>, Object> axis = null;
+        Tuple2<Seq<Object>, Object> axis;
 
-        if (buttonName.equals("Linear Regression")) {
-
-        } else if (buttonName.equals("Logistic Regression")) {
-
-        } else if (buttonName.equals("Neural Network")) {
+        if (buttonName.equals("Neural Network")) {
             axis = neuralNetworkDemo.getAxis();
         } else {
             axis = perceptronDemo.getAxis();

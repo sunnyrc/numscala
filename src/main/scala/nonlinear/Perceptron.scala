@@ -24,7 +24,7 @@ class Perceptron(learning_rate: Double = 0.1, threshold: Double = 0.5) {
 
     while(epoch <= maxEpoch && error != 0) {
 //      println(s"Epoch $epoch, error = $error")
-      ls+=error
+//      ls+=error
       error = 0
       for(j <- 0 until trainI.rows - 1) {
 //        ls+=error
@@ -34,7 +34,7 @@ class Perceptron(learning_rate: Double = 0.1, threshold: Double = 0.5) {
           epoch += 1
           error += 1
           weights += (trainI(j, ::).inner * err.toDouble) * learning_rate
-//          ls+=error
+          ls+=error
         }
       }
     }
