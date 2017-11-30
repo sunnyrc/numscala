@@ -47,12 +47,10 @@ public class LineChartUI {
         chartRowConstraints.setPercentHeight(80);
 
         GridPane grid = new GridPane();
-        grid.setHgap(10);
-        grid.setVgap(10);
         grid.getRowConstraints().addAll(chartRowConstraints, button1RowConstraints, button2RowConstraints);
         grid.setMaxSize(Constant.PARENT_PREF_WIDTH, Constant.PARENT_PREF_HEIGHT);
 
-        int prefWidth = ys.size()*3;
+        int prefWidth = Constant.PARENT_PREF_WIDTH;
 
         NumberAxis xAxis = new NumberAxis();
         xAxis.setLabel("Epoch");
@@ -142,12 +140,10 @@ public class LineChartUI {
         chartRowConstraints.setPercentHeight(80);
 
         GridPane grid = new GridPane();
-        grid.setHgap(10);
-        grid.setVgap(10);
         grid.getRowConstraints().addAll(chartRowConstraints, button1RowConstraints, button2RowConstraints);
         grid.setMaxSize(Constant.PARENT_PREF_WIDTH, Constant.PARENT_PREF_HEIGHT);
 
-        int prefWidth = ys.size()*3;
+        int prefWidth = Constant.PARENT_PREF_WIDTH;
 
         NumberAxis xAxis = new NumberAxis();
         xAxis.setLabel("Epoch");
@@ -209,8 +205,7 @@ public class LineChartUI {
         HBox hBox = this.drawChartViewMode(primaryStage, dataWrapper);
 
         Scene scene = new Scene(hBox);
-        primaryStage.setWidth(Constant.PARENT_PREF_WIDTH);
-        primaryStage.setHeight(Constant.PARENT_PREF_HEIGHT);
+        primaryStage.sizeToScene();
         primaryStage.setScene(scene);
     }
 
@@ -223,8 +218,7 @@ public class LineChartUI {
         HBox hBox = this.drawChartHoverMode(primaryStage, dataWrapper);
 
         Scene scene = new Scene(hBox);
-        primaryStage.setWidth(Constant.PARENT_PREF_WIDTH);
-        primaryStage.setHeight(Constant.PARENT_PREF_HEIGHT);
+        primaryStage.sizeToScene();
         primaryStage.setScene(scene);
     }
 

@@ -2,9 +2,9 @@ package nonlinear
 
 import java.io.File
 
-import activationfunctions.{sigmoid, softplus}
+import activationfunctions.{sigmoid, softplus, tanh}
 import breeze.linalg.{Axis, DenseMatrix, DenseVector, csvread, csvwrite, max, sum}
-import breeze.numerics.{log, pow, tanh}
+import breeze.numerics.{log, pow}
 import breeze.stats.distributions.Rand
 
 import scala.collection.mutable.ListBuffer
@@ -61,6 +61,7 @@ class NeuralNetwork(name: String = "test",train: DenseMatrix[Double], labels: De
     (-y :* log(yPred)) :- ((-y + 1.0) :* log(-yPred + 1.0))
   }
 
+  // Passing the layers through activation function
   def thetha(x: DenseVector[Double], thetas: Array[DenseMatrix[Double]], vecs: List[DenseVector[Double]] = List()): (DenseVector[Double], List[DenseVector[Double]]) = {
     if (thetas.isEmpty) (x(1 to -1), vecs)
     else {
@@ -69,6 +70,7 @@ class NeuralNetwork(name: String = "test",train: DenseMatrix[Double], labels: De
     }
   }
 
+  // Passing the layers through activation function
   def thetha(x: DenseMatrix[Double], thetas: Array[DenseMatrix[Double]]): DenseMatrix[Double] = {
     if (thetas.isEmpty) x(1 to -1, ::).t
     else {
@@ -102,7 +104,7 @@ class NeuralNetwork(name: String = "test",train: DenseMatrix[Double], labels: De
     else actualCost
   }
 
-  def sigmoidGrad(pred: DenseVector[Double]): DenseVector[Double] = pred :* (-pred + 1.0)
+  def sigmoidGrad(x: DenseVector[Double]): DenseVector[Double] = x :* (-x + 1.0)
 
   def backpropagate(train: DenseMatrix[Double], xs: DenseMatrix[Double], weights: Array[DenseMatrix[Double]]): Array[DenseMatrix[Double]] = {
 
@@ -110,6 +112,7 @@ class NeuralNetwork(name: String = "test",train: DenseMatrix[Double], labels: De
     mat.foreach(f => f(::, 0) := 1.0)
 
     for (i <- 0 until train.rows) {
+
       // get actual predictions
       var (pred, vecs) = thetha(train(i, ::).inner, weights)
       var diff = pred - xs(i, ::).inner

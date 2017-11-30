@@ -22,7 +22,7 @@ public class ScalaIntepreterService {
         List<Double> resultList = new ArrayList<>();
 
         for (Object o: objectList) {
-            Double point = (Double) o;
+            Double point = this.roundAccuracy(o);
             resultList.add(point);
         }
 

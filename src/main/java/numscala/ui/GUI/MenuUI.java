@@ -103,8 +103,7 @@ public class MenuUI {
         Scene scene = new Scene(hBox);
 
         primaryStage.setScene(scene);
-        primaryStage.setWidth(Constant.PARENT_PREF_WIDTH);
-        primaryStage.setHeight(Constant.PARENT_PREF_HEIGHT);
+        primaryStage.sizeToScene();
         primaryStage.show();
     }
 }

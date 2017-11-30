@@ -16,7 +16,7 @@ public class Constant {
 
     public static int PARENT_PREF_HEIGHT = 600;
 
-    public static int CHILDREN_MAX_WIDTH = 1200;
+    public static int CHILDREN_MAX_WIDTH = 800;
 
     public static int CHILDREN_MAX_HEIGHT = 600;
 }
