@@ -6,7 +6,7 @@ import utilities.Utilities.{logloss, train_test_split_double}
 
 class LogisticRegressionDemo extends App{
 
-  def getLogloss: Double = {
+  def getAxis: Seq[Double] = {
     val predLabel = "Iris-versicolor"
 
     val (labels, all_data) = IrisLoader.load()
@@ -25,7 +25,8 @@ class LogisticRegressionDemo extends App{
     val loss: Double = sum(logloss(test_y, yPred)) / test_y.length
     println(s"Logloss : $loss")
 
-    loss
+
+    logisticRegression.ls
     //  println(y.toArray.toList.zip(yPred.toArray.toList))
   }
 }

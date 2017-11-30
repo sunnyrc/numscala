@@ -1,4 +1,4 @@
-[info] Updating {file:/D:/Mahidol/OPL/numscala/project/}numscala-build...
+[info] Updating {file:/C:/Users/sanch/Desktop/numscala/project/}numscala-build...
 [debug] :: resolving dependencies :: default#numscala-build;0.1-SNAPSHOT
 [debug] 	confs: [compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool]
 [debug] 	validate = true
@@ -6009,19 +6009,19 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#template-resolver;0.1!template-resolver.jar
 [debug] 	[NOT REQUIRED] org.scala-lang#jline;2.10.6!jline.jar
 [debug] 	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar
-[debug] :: resolution report :: resolve 6718ms :: artifacts dl 299ms
-[debug] 	report for default#numscala-build;0.1-SNAPSHOT compile produced in D:\Mahidol\OPL\numscala\project\target\scala-2.10\sbt-0.13\resolution-cache\reports\default-numscala-build-compile.xml
-[debug] 	report for default#numscala-build;0.1-SNAPSHOT runtime produced in D:\Mahidol\OPL\numscala\project\target\scala-2.10\sbt-0.13\resolution-cache\reports\default-numscala-build-runtime.xml
-[debug] 	report for default#numscala-build;0.1-SNAPSHOT test produced in D:\Mahidol\OPL\numscala\project\target\scala-2.10\sbt-0.13\resolution-cache\reports\default-numscala-build-test.xml
-[debug] 	report for default#numscala-build;0.1-SNAPSHOT provided produced in D:\Mahidol\OPL\numscala\project\target\scala-2.10\sbt-0.13\resolution-cache\reports\default-numscala-build-provided.xml
-[debug] 	report for default#numscala-build;0.1-SNAPSHOT optional produced in D:\Mahidol\OPL\numscala\project\target\scala-2.10\sbt-0.13\resolution-cache\reports\default-numscala-build-optional.xml
-[debug] 	report for default#numscala-build;0.1-SNAPSHOT compile-internal produced in D:\Mahidol\OPL\numscala\project\target\scala-2.10\sbt-0.13\resolution-cache\reports\default-numscala-build-compile-internal.xml
-[debug] 	report for default#numscala-build;0.1-SNAPSHOT runtime-internal produced in D:\Mahidol\OPL\numscala\project\target\scala-2.10\sbt-0.13\resolution-cache\reports\default-numscala-build-runtime-internal.xml
-[debug] 	report for default#numscala-build;0.1-SNAPSHOT test-internal produced in D:\Mahidol\OPL\numscala\project\target\scala-2.10\sbt-0.13\resolution-cache\reports\default-numscala-build-test-internal.xml
-[debug] 	report for default#numscala-build;0.1-SNAPSHOT plugin produced in D:\Mahidol\OPL\numscala\project\target\scala-2.10\sbt-0.13\resolution-cache\reports\default-numscala-build-plugin.xml
-[debug] 	report for default#numscala-build;0.1-SNAPSHOT sources produced in D:\Mahidol\OPL\numscala\project\target\scala-2.10\sbt-0.13\resolution-cache\reports\default-numscala-build-sources.xml
-[debug] 	report for default#numscala-build;0.1-SNAPSHOT docs produced in D:\Mahidol\OPL\numscala\project\target\scala-2.10\sbt-0.13\resolution-cache\reports\default-numscala-build-docs.xml
-[debug] 	report for default#numscala-build;0.1-SNAPSHOT pom produced in D:\Mahidol\OPL\numscala\project\target\scala-2.10\sbt-0.13\resolution-cache\reports\default-numscala-build-pom.xml
-[debug] 	report for default#numscala-build;0.1-SNAPSHOT scala-tool produced in D:\Mahidol\OPL\numscala\project\target\scala-2.10\sbt-0.13\resolution-cache\reports\default-numscala-build-scala-tool.xml
-[debug] 	resolve done (6718ms resolve - 299ms download)
+[debug] :: resolution report :: resolve 2506ms :: artifacts dl 57ms
+[debug] 	report for default#numscala-build;0.1-SNAPSHOT compile produced in C:\Users\sanch\Desktop\numscala\project\target\scala-2.10\sbt-0.13\resolution-cache\reports\default-numscala-build-compile.xml
+[debug] 	report for default#numscala-build;0.1-SNAPSHOT runtime produced in C:\Users\sanch\Desktop\numscala\project\target\scala-2.10\sbt-0.13\resolution-cache\reports\default-numscala-build-runtime.xml
+[debug] 	report for default#numscala-build;0.1-SNAPSHOT test produced in C:\Users\sanch\Desktop\numscala\project\target\scala-2.10\sbt-0.13\resolution-cache\reports\default-numscala-build-test.xml
+[debug] 	report for default#numscala-build;0.1-SNAPSHOT provided produced in C:\Users\sanch\Desktop\numscala\project\target\scala-2.10\sbt-0.13\resolution-cache\reports\default-numscala-build-provided.xml
+[debug] 	report for default#numscala-build;0.1-SNAPSHOT optional produced in C:\Users\sanch\Desktop\numscala\project\target\scala-2.10\sbt-0.13\resolution-cache\reports\default-numscala-build-optional.xml
+[debug] 	report for default#numscala-build;0.1-SNAPSHOT compile-internal produced in C:\Users\sanch\Desktop\numscala\project\target\scala-2.10\sbt-0.13\resolution-cache\reports\default-numscala-build-compile-internal.xml
+[debug] 	report for default#numscala-build;0.1-SNAPSHOT runtime-internal produced in C:\Users\sanch\Desktop\numscala\project\target\scala-2.10\sbt-0.13\resolution-cache\reports\default-numscala-build-runtime-internal.xml
+[debug] 	report for default#numscala-build;0.1-SNAPSHOT test-internal produced in C:\Users\sanch\Desktop\numscala\project\target\scala-2.10\sbt-0.13\resolution-cache\reports\default-numscala-build-test-internal.xml
+[debug] 	report for default#numscala-build;0.1-SNAPSHOT plugin produced in C:\Users\sanch\Desktop\numscala\project\target\scala-2.10\sbt-0.13\resolution-cache\reports\default-numscala-build-plugin.xml
+[debug] 	report for default#numscala-build;0.1-SNAPSHOT sources produced in C:\Users\sanch\Desktop\numscala\project\target\scala-2.10\sbt-0.13\resolution-cache\reports\default-numscala-build-sources.xml
+[debug] 	report for default#numscala-build;0.1-SNAPSHOT docs produced in C:\Users\sanch\Desktop\numscala\project\target\scala-2.10\sbt-0.13\resolution-cache\reports\default-numscala-build-docs.xml
+[debug] 	report for default#numscala-build;0.1-SNAPSHOT pom produced in C:\Users\sanch\Desktop\numscala\project\target\scala-2.10\sbt-0.13\resolution-cache\reports\default-numscala-build-pom.xml
+[debug] 	report for default#numscala-build;0.1-SNAPSHOT scala-tool produced in C:\Users\sanch\Desktop\numscala\project\target\scala-2.10\sbt-0.13\resolution-cache\reports\default-numscala-build-scala-tool.xml
+[debug] 	resolve done (2506ms resolve - 57ms download)
 [info] Done updating.

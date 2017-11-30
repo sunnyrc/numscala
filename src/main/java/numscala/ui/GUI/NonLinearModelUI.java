@@ -97,7 +97,8 @@ public class NonLinearModelUI {
         grid.setHalignment(back, HPos.CENTER);
 
         // Accuracy
-        grid.add(new Label(dataWrapper.getParam() + ": " + accuracy), 1, 0);
+        if (!dataWrapper.getParam().equals("Loss"))
+            grid.add(new Label(dataWrapper.getParam() + ": " + accuracy), 1, 0);
 
         // Epoch vs Error Side information
         for (XYChart.Data<Number, Number> data: series.getData()) {
@@ -105,11 +106,18 @@ public class NonLinearModelUI {
                     (Event event) -> {
                         ((Node)(event.getSource())).setCursor(Cursor.HAND);
                         // Some text is already there
+                        Label label;
                         grid.getChildren().remove(grid.getChildren().size()-1);
 
-                        Label label = new Label("Epoch: " + data.getXValue() +
-                                                    "\n" + dataWrapper.getParam() + ": " + data.getYValue() +
-                                                    "\nAccuracy: " + accuracy);
+                        if (!dataWrapper.getParam().equals("Loss")) {
+                            label = new Label("Epoch: " + data.getXValue() +
+                                    "\n" + dataWrapper.getParam() + ": " + data.getYValue() +
+                                    "\nAccuracy: " + accuracy);
+                        } else {
+                            label = new Label("Epoch: " + data.getXValue() +
+                                    "\n" + dataWrapper.getParam() + ": " + data.getYValue());
+
+                        }
                         grid.add(label, 1, 0);
                     });
         }
@@ -174,7 +182,8 @@ public class NonLinearModelUI {
         grid.add(lineChart, 0, 0);
 
         // Accuracy
-        grid.add(new Label("Accuracy: " + ": " + accuracy), 1, 0);
+        if (!dataWrapper.getParam().equals("Loss"))
+            grid.add(new Label("Accuracy: " + accuracy), 1, 0);
 
         // Mode switch button
         Button modeSwitch = new Button();

@@ -4,12 +4,16 @@ import breeze.linalg.{DenseMatrix, DenseVector, sum}
 import breeze.numerics.{abs, exp}
 import utilities.Utilities.logloss
 
+import scala.collection.mutable.ListBuffer
+
 class LogisticRegression {
 
   var ans: DenseVector[Double] = DenseVector[Double]()
 
   val MAX: Double = 20.0
   val MIN: Double = -20.0
+
+  var ls = new ListBuffer[Double]()
 
   def thetha(weights: DenseVector[Double], x: DenseMatrix[Double]): DenseVector[Double] = {
     val ones = DenseVector.ones[Double](x.rows)
@@ -29,7 +33,7 @@ class LogisticRegression {
     (-1.0/m) * sum(logloss(y, yPred)) +  sum(t1 * t1.t)
   }
 
-  def fit(train: DenseMatrix[Double], y: DenseVector[Double], learning_rate: Double = .1, ep: Double = 0.001, maxIter: Int = 10000): Unit = {
+  def fit(train: DenseMatrix[Double], y: DenseVector[Double], learning_rate: Double = 0.1, ep: Double = 0.001, maxIter: Int = 10000): Unit = {
 
     var weights = DenseVector.zeros[Double](train.cols + 1)
     val ones = DenseMatrix.ones[Double](y.length, 1)
@@ -48,12 +52,13 @@ class LogisticRegression {
       nIter += 1
       J = e
       // that weird sign is element wise multiply
-      val reg = weights
+
       // that weird sign is element wise minus
-      weights = weights :- (((paddedTrain.t * err) / m.toDouble) + reg) * learning_rate
+      weights = weights :- (((paddedTrain.t * err) / m.toDouble) + weights) * learning_rate
       yPred = thetha(weights, paddedTrain)
       err =  yPred - y
       e = cost(weights, y, yPred)
+      ls+=e
     }
 
     println(s"Converged in $nIter iterations")

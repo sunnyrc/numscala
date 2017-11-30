@@ -17,6 +17,7 @@ import test.NeuralNetworkDemo;
 import test.PerceptronDemo;
 
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Created by Trung on 11/30/2017.
@@ -90,18 +91,13 @@ public class MenuUI {
         Tuple2<Seq<Object>, Object> axis;
         Object error;
 
-        if (buttonName.equals("Linear Regression") || buttonName.equals("Logistic Regression")) {
+        if (buttonName.equals("Linear Regression")) {
             DataWrapper dataWrapper = new DataWrapper();
 
-            if (buttonName.equals("Linear Regression")) {
-                error = linearRegressionDemo.getError();
-                dataWrapper.setParam("Error");
-            } else {
-                error = logisticRegressionDemo.getLogloss();
-                dataWrapper.setParam("Logloss");
-            }
-
+            error = linearRegressionDemo.getError();
             Double doubleError = scalaIntepreterService.roundAccuracy(error);
+
+            dataWrapper.setParam("Error");
             dataWrapper.setDoubleInfo(doubleError);
             HBox hBox = linearModelUI.drawInfo(primaryStage, dataWrapper);
 
@@ -124,6 +120,19 @@ public class MenuUI {
 
             dataWrapper.setAxis(ys);
             dataWrapper.setDoubleInfo(accuracy);
+
+            HBox hBox = nonLinearModelUI.drawChartViewMode(primaryStage, dataWrapper);
+            scene = new Scene(hBox);
+        } else {
+            Seq<Object> logisticAxis = logisticRegressionDemo.getAxis();
+            DataWrapper dataWrapper = new DataWrapper();
+
+            List<Double> ys = scalaIntepreterService.scalaSequenceToList(logisticAxis);
+            ys = ys.subList(1, ys.size());
+
+            dataWrapper.setAxis(ys);
+            dataWrapper.setParam("Loss");
+            dataWrapper.setDoubleInfo(0D);
 
             HBox hBox = nonLinearModelUI.drawChartViewMode(primaryStage, dataWrapper);
             scene = new Scene(hBox);

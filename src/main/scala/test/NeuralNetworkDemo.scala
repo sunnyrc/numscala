@@ -15,8 +15,8 @@ class NeuralNetworkDemo extends App{
       * 2 Hidden Layers
       * 25 Nodes per layer
       */
-    val neuralNetwork = new NeuralNetwork(name = "test", all_data, labels, hiddenLayers = 2, nodesPerLayer = 25)
-    //  neuralNetwork.train(maxEpoch = 10, read_weights = true)
+    val neuralNetwork = new NeuralNetwork(name = "test", all_data, labels, hiddenLayers = 1, nodesPerLayer = 30)
+//      neuralNetwork.train(maxEpoch = 10, read_weights = true)
     neuralNetwork.train(maxEpoch = 100)
     val yPred = neuralNetwork.predict(test)
     val yy: Seq[Double] = neuralNetwork.ls
