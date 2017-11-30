@@ -9,7 +9,9 @@ public class DataWrapper {
 
     List<Double> axis;
 
-    Double accuracy;
+    Double doubleInfo;
+
+    String param;
 
     public List<Double> getAxis() {
         return axis;
@@ -19,11 +21,19 @@ public class DataWrapper {
         this.axis = axis;
     }
 
-    public Double getAccuracy() {
-        return accuracy;
+    public Double getDoubleInfo() {
+        return doubleInfo;
     }
 
-    public void setAccuracy(Double accuracy) {
-        this.accuracy = accuracy;
+    public void setDoubleInfo(Double doubleInfo) {
+        this.doubleInfo = doubleInfo;
+    }
+
+    public String getParam() {
+        return param;
+    }
+
+    public void setParam(String param) {
+        this.param = param;
     }
 }

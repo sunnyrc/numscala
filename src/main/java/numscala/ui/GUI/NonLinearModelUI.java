@@ -23,7 +23,7 @@ import java.util.List;
 /**
  * Created by Trung on 11/29/2017.
  */
-public class LineChartUI {
+public class NonLinearModelUI {
 
     /**
      * Draw chart, return HBox Object
@@ -32,7 +32,7 @@ public class LineChartUI {
      */
     public HBox drawChartHoverMode(Stage primaryStage, DataWrapper dataWrapper) {
         List<Double> ys = dataWrapper.getAxis();
-        Double accuracy = dataWrapper.getAccuracy();
+        Double accuracy = dataWrapper.getDoubleInfo();
 
         HBox root = new HBox();
 
@@ -55,7 +55,7 @@ public class LineChartUI {
         NumberAxis xAxis = new NumberAxis();
         xAxis.setLabel("Epoch");
         NumberAxis yAxis = new NumberAxis();
-        yAxis.setLabel("Error");
+        yAxis.setLabel(dataWrapper.getParam());
 
         LineChart<Number, Number> lineChart = new LineChart<>(xAxis, yAxis);
         lineChart.setLegendVisible(false);
@@ -108,7 +108,7 @@ public class LineChartUI {
                         grid.getChildren().remove(grid.getChildren().size()-1);
 
                         Label label = new Label("Epoch: " + data.getXValue() +
-                                                    "\nError: " + data.getYValue() +
+                                                    "\n" + dataWrapper.getParam() + ": " + data.getYValue() +
                                                     "\nAccuracy: " + accuracy);
                         grid.add(label, 1, 0);
                     });
@@ -125,7 +125,7 @@ public class LineChartUI {
      */
     public HBox drawChartViewMode(Stage primaryStage, DataWrapper dataWrapper) {
         List<Double> ys = dataWrapper.getAxis();
-        Double accuracy = dataWrapper.getAccuracy();
+        Double accuracy = dataWrapper.getDoubleInfo();
 
         HBox root = new HBox();
 
@@ -174,7 +174,7 @@ public class LineChartUI {
         grid.add(lineChart, 0, 0);
 
         // Accuracy
-        grid.add(new Label("Accuracy: " + accuracy), 1, 0);
+        grid.add(new Label(dataWrapper.getParam() + ": " + accuracy), 1, 0);
 
         // Mode switch button
         Button modeSwitch = new Button();
