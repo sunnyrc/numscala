@@ -57,8 +57,8 @@ class NeuralNetwork(name: String = "test",train: DenseMatrix[Double], labels: De
   }
 
   // Log Loss function
-  def loss(y: DenseVector[Double], yPred: DenseVector[Double]): DenseVector[Double] = {
-    (-y :* log(yPred)) :- ((-y + 1.0) :* log(-yPred + 1.0))
+  def loss(y: DenseVector[Double], pred: DenseVector[Double]): DenseVector[Double] = {
+    (-y :* log(pred)) :- ((-y + 1.0) :* log(-pred + 1.0))
   }
 
   // Passing the layers through activation function
@@ -86,9 +86,7 @@ class NeuralNetwork(name: String = "test",train: DenseMatrix[Double], labels: De
     }
   }
 
-  def makeZeroMatrix(matrix: Array[DenseMatrix[Double]]): Array[DenseMatrix[Double]] = {
-    matrix.map(m => DenseMatrix.zeros[Double](m.rows, m.cols))
-  }
+  def makeZeroMatrix(matrix: Array[DenseMatrix[Double]]): Array[DenseMatrix[Double]] = matrix.map(m => DenseMatrix.zeros[Double](m.rows, m.cols))
 
   def cost(x: DenseMatrix[Double], thetas: Array[DenseMatrix[Double]], y: DenseMatrix[Double], regularize: Boolean = true, lambda: Double = 0.8): Double = {
     val actualCost = (1.0 / x.rows) * sum(
@@ -104,7 +102,7 @@ class NeuralNetwork(name: String = "test",train: DenseMatrix[Double], labels: De
     else actualCost
   }
 
-  def sigmoidGrad(x: DenseVector[Double]): DenseVector[Double] = x :* (-x + 1.0)
+  def sigmoidOutputToDerivative(x: DenseVector[Double]): DenseVector[Double] = x :* (-x + 1.0)
 
   def backpropagate(train: DenseMatrix[Double], xs: DenseMatrix[Double], weights: Array[DenseMatrix[Double]]): Array[DenseMatrix[Double]] = {
 
@@ -125,7 +123,7 @@ class NeuralNetwork(name: String = "test",train: DenseMatrix[Double], labels: De
         mat(j)(::, 0) := mat(j)(::, 0) :* diff
         mat(j)(::, 1 to -1) := mat(j)(::, 1 to -1) + (diff * pred.t)
 
-        diff = (weights(j).t(1 to -1, ::) * diff) :* sigmoidGrad(pred)
+        diff = (weights(j).t(1 to -1, ::) * diff) :* sigmoidOutputToDerivative(pred)
       }
     }
     mat.map(_ :/ train.rows.toDouble)
@@ -133,13 +131,12 @@ class NeuralNetwork(name: String = "test",train: DenseMatrix[Double], labels: De
 
   def train(learning_rate: Double = 0.8, maxEpoch: Int = 1000, lambda: Double = 0.05, read_weights: Boolean = false): Unit = {
 
-    if (read_weights) weights = readWeights(name)
+    if (read_weights) weights = open(name)
 
     var cost_ = cost(trainPadded, weights, y, lambda = lambda)
 
     var epoch = 0
 
-    println(s"Cost at the start: $cost_")
     while (epoch < maxEpoch) {
       val mat = backpropagate(trainPadded, y, weights)
 
@@ -150,40 +147,31 @@ class NeuralNetwork(name: String = "test",train: DenseMatrix[Double], labels: De
         weights(l)(::, 1 to -1) := weights(l)(::, 1 to -1) - mat(l)(::, 1 to -1) * learning_rate
       }
 
-
       cost_ = cost(trainPadded, weights, y, lambda = lambda)
       println(s"cost $cost_ at epoch $epoch")
 
       if (epoch % 100 == 0) {
         val y: List[Int] = predict(train)
-        println(s"Accuracy at epoch $epoch: " + utilities.Utilities.accuracy(labels, DenseVector(y: _*)))
-        saveWeights(weights)
+        save(weights)
       }
       epoch += 1
     }
 
-    saveWeights(weights)
+    save(weights)
   }
 
-  def saveWeights(weights: Array[DenseMatrix[Double]]): Unit ={
-    weights.zipWithIndex.foreach{
-      case (ws, i) =>  csvwrite(new File(s"C:/Users/sanch/Desktop/numscala/src/main/scala/test/models/$name-theta${i+1}.csv"), ws)
-    }
-  }
+  def save(weights: Array[DenseMatrix[Double]]): Unit = weights.zipWithIndex.foreach{ case (weight, x) =>  csvwrite(new File(s"C:/Users/Administrator/IdeaProjects/numscala/src/main/scala/test/models/$name-theta${x+1}.csv"), weight)}
 
-  def readWeights(name: String): Array[DenseMatrix[Double]] ={
-    (0 to hiddenLayers).map(i => csvread(new File(s"C:/Users/sanch/Desktop/numscala/src/main/scala/test/models/$name-theta${i+1}.csv"))).toArray
-  }
-
+  def open(name: String): Array[DenseMatrix[Double]] = (0 to hiddenLayers).map(x => csvread(new File(s"C:/Users/Administrator/IdeaProjects/numscala/src/main/scala/test/models/$name-theta${x+1}.csv"))).toArray
 
   def predict(test: DenseMatrix[Double]): List[Int] = {
     // pad the test
     val paddedTest = DenseMatrix.horzcat(DenseMatrix.ones[Double](test.rows, 1), test)
-    val yPred = thetha(paddedTest, weights)
+    val pred = thetha(paddedTest, weights)
 
     val predictions =
-      for {i <- 0 until yPred.rows
-           each = yPred(i, ::).inner
+      for {i <- 0 until pred.rows
+           each = pred(i, ::).inner
       } yield each.findAll(_ == max(each)).head
 
     predictions.map(_ + 1).toList

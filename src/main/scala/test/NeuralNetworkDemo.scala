@@ -14,14 +14,13 @@ class NeuralNetworkDemo extends App{
       * 2 Hidden Layers
       * 25 Nodes per layer
       */
+    // Remove the name when training a new batch please!
     val neuralNetwork = new NeuralNetwork(name = "BigDigit", all_data, labels, hiddenLayers = 2, nodesPerLayer = 25)
+    // Comment this line out to start training a new model
       neuralNetwork.train(maxEpoch = 1, read_weights = true)
-//    neuralNetwork.train(maxEpoch = 100)
+//    neuralNetwork.train(maxEpoch = 100, learning_rate = 0.9)
     val yPred = neuralNetwork.predict(test)
     val yy: Seq[Double] = neuralNetwork.ls
-    val x = yy.indices.map(_.toDouble)
-    // send x, yy to sky
-    println("Accuracy: " + Utilities.accuracy(test_y, DenseVector(yPred: _*)))
 
     (yy, Utilities.accuracy(test_y, DenseVector(yPred: _*)))
   }

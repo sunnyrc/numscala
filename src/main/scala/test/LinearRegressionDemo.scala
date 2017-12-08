@@ -7,19 +7,17 @@ import linearmodels.LinearRegression
 class LinearRegressionDemo extends App{
 
   def getError: Double = {
-    val (labels, train) = IrisLoader.load()
-    val clf = new LinearRegression()
+    val (_, train) = IrisLoader.load()
+    val linearRegression = new LinearRegression()
     val X = train(::, 1 to 3)
 
-    // Predict sepal length
     val y = train(::, 0)
 
-    clf.fit(X, y)
+    linearRegression.fit(X, y)
 
-    var yPred = clf.predict(X)
+    val yPred = linearRegression.predict(X)
 
-    var error = sum(pow(yPred - y, 2)) / y.length
-    println(s"Standard Error: $error")
+    val error = sum(pow(yPred - y, 2)) / y.length
 
     error
   }

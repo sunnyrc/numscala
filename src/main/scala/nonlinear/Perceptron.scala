@@ -16,36 +16,35 @@ class Perceptron(learning_rate: Double = 0.1, threshold: Double = 0.5) {
     weights = DenseVector.zeros[Double](train.cols + 1)
     var epoch = 1
 
-    val b = DenseMatrix.ones[Double](y.length, 1)
+    val ones = DenseMatrix.ones[Double](y.length, 1)
 
     // Padding
-    val trainI = DenseMatrix.horzcat(b, train)
+    val paddedTrain = DenseMatrix.horzcat(ones, train)
     var error = -1
 
     while(epoch <= maxEpoch && error != 0) {
-//      println(s"Epoch $epoch, error = $error")
-//      ls+=error
+
       error = 0
-      for(j <- 0 until trainI.rows - 1) {
-//        ls+=error
-        val yPred = if((trainI(j, ::) * weights) > threshold) 1 else 0
-        val err = y(j) - yPred
+      for(i <- 0 until paddedTrain.rows - 1) {
+
+        val pred = if((paddedTrain(i, ::) * weights) > threshold) 1 else 0
+        val err = y(i) - pred
         if (err != 0) {
           epoch += 1
           error += 1
-          weights += (trainI(j, ::).inner * err.toDouble) * learning_rate
+          weights += (paddedTrain(i, ::).inner * err.toDouble) * learning_rate
           ls+=error
         }
       }
     }
-    if(error == 0) println(s"Finished after $epoch epochs")
+    if(error == 0) println(s"$epoch epochs later.")
     else println(s"Max Epoch reached with $error error")
   }
 
   def predict(test: DenseMatrix[Double]): DenseVector[Int] = {
-    val b = DenseMatrix.ones[Double](test.rows, 1)
-    val testI = DenseMatrix.horzcat(b, test)
+    val ones = DenseMatrix.ones[Double](test.rows, 1)
+    val paddedTest = DenseMatrix.horzcat(ones, test)
 
-    (testI * weights).map(y => if(y > threshold) 1 else 0)
+    (paddedTest * weights).map(y => if(y > threshold) 1 else 0)
   }
 }

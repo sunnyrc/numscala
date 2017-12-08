@@ -10,8 +10,8 @@ class LogisticRegression {
 
   var ans: DenseVector[Double] = DenseVector[Double]()
 
-  val MAX: Double = 20.0
-  val MIN: Double = -20.0
+  val MAX: Double = 200.0
+  val MIN: Double = -200.0
 
   var ls = new ListBuffer[Double]()
 
@@ -19,21 +19,18 @@ class LogisticRegression {
     val ones = DenseVector.ones[Double](x.rows)
 
     // Prevent overflow cos of Double's precision range
-    val z0 = -(x * weights).map(v =>
+    val notOverflow = -(x * weights).map(v =>
       if (v > MAX) MAX
       else if(v < MIN) MIN
       else v
     )
 
-    ones / (exp(z0) + 1.0)
+    ones / (exp(notOverflow) + 1.0)
   }
 
-  def cost(t1: DenseVector[Double], y: DenseVector[Double], yPred: DenseVector[Double]): Double = {
-    val m = y.length
-    (-1.0/m) * sum(logloss(y, yPred)) +  sum(t1 * t1.t)
-  }
+  def cost(x: DenseVector[Double], y: DenseVector[Double], pred: DenseVector[Double]): Double = (-1.0/y.length) * sum(logloss(y, pred)) +  sum(x * x.t)
 
-  def fit(train: DenseMatrix[Double], y: DenseVector[Double], learning_rate: Double = 0.1, ep: Double = 0.001, maxIter: Int = 10000): Unit = {
+  def fit(train: DenseMatrix[Double], y: DenseVector[Double], learning_rate: Double = 0.1, ep: Double = 0.00001, maxEpoch: Int = 5000): Unit = {
 
     var weights = DenseVector.zeros[Double](train.cols + 1)
     val ones = DenseMatrix.ones[Double](y.length, 1)
@@ -41,39 +38,34 @@ class LogisticRegression {
 
 
     val m = train.rows
-    var yPred = thetha(weights, paddedTrain)
-    var err = yPred - y
-    var e = cost(weights, y, yPred)
-    var J = 100.0
-    var nIter = 0
+    var pred = thetha(weights, paddedTrain)
+    var err = pred - y
+    var e = cost(weights, y, pred)
+
+    var old_e = 100.0
+    var epoch = 0
 
     // while difference between old error and new error is greater than ep given  (i.e progress)
-    while(abs(J - e) > ep && nIter <= maxIter) {
-      nIter += 1
-      J = e
-      // that weird sign is element wise multiply
+    while(abs(old_e - e) > ep && epoch <= maxEpoch) {
+      epoch += 1
+      old_e = e
 
-      // that weird sign is element wise minus
+      // element wise minus
       weights = weights :- (((paddedTrain.t * err) / m.toDouble) + weights) * learning_rate
-      yPred = thetha(weights, paddedTrain)
-      err =  yPred - y
-      e = cost(weights, y, yPred)
+      pred = thetha(weights, paddedTrain)
+      err =  pred - y
+      e = cost(weights, y, pred)
       ls+=e
     }
 
-    println(s"Converged in $nIter iterations")
     ans = weights
   }
 
-  def predictProbability(test: DenseMatrix[Double]): DenseVector[Double] = {
-    val b1 = DenseMatrix.ones[Double](test.rows, 1)
-    val testI = DenseMatrix.horzcat(b1, test)
-    thetha(ans, testI)
-  }
-
   def predict(test: DenseMatrix[Double]): DenseVector[Double] = {
-    val yPred = predictProbability(test)
-    yPred.map(x => if(x > .5) 1.0 else .0)
+    val ones = DenseMatrix.ones[Double](test.rows, 1)
+    val paddedTest = DenseMatrix.horzcat(ones, test)
+    val pred = thetha(ans, paddedTest)
+    pred.map(x => if(x > .5) 1.0 else .0)
   }
 
 }
