@@ -19,9 +19,9 @@ class NeuralNetworkDemo extends App{
     // Comment this line out to start training a new model
       neuralNetwork.train(maxEpoch = 1, read_weights = true)
 //    neuralNetwork.train(maxEpoch = 100, learning_rate = 0.9)
-    val yPred = neuralNetwork.predict(test)
+    val pred = neuralNetwork.predict(test)
     val yy: Seq[Double] = neuralNetwork.ls
 
-    (yy, Utilities.accuracy(test_y, DenseVector(yPred: _*)))
+    (yy, Utilities.accuracy(test_y, DenseVector(pred: _*)))
   }
 }

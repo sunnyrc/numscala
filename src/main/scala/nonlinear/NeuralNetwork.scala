@@ -57,9 +57,7 @@ class NeuralNetwork(name: String = "test",train: DenseMatrix[Double], labels: De
   }
 
   // Log Loss function
-  def loss(y: DenseVector[Double], pred: DenseVector[Double]): DenseVector[Double] = {
-    (-y :* log(pred)) :- ((-y + 1.0) :* log(-pred + 1.0))
-  }
+  def loss(y: DenseVector[Double], pred: DenseVector[Double]): DenseVector[Double] = (-y :* log(pred)) :- ((-y + 1.0) :* log(-pred + 1.0))
 
   // Passing the layers through activation function
   def thetha(x: DenseVector[Double], thetas: Array[DenseMatrix[Double]], vecs: List[DenseVector[Double]] = List()): (DenseVector[Double], List[DenseVector[Double]]) = {
@@ -86,20 +84,15 @@ class NeuralNetwork(name: String = "test",train: DenseMatrix[Double], labels: De
     }
   }
 
-  def makeZeroMatrix(matrix: Array[DenseMatrix[Double]]): Array[DenseMatrix[Double]] = matrix.map(m => DenseMatrix.zeros[Double](m.rows, m.cols))
+  def makeZeroMatrix(matrix: Array[DenseMatrix[Double]]): Array[DenseMatrix[Double]] = matrix.map(x => DenseMatrix.zeros[Double](x.rows, x.cols))
 
-  def cost(x: DenseMatrix[Double], thetas: Array[DenseMatrix[Double]], y: DenseMatrix[Double], regularize: Boolean = true, lambda: Double = 0.8): Double = {
+  def cost(x: DenseMatrix[Double], thetas: Array[DenseMatrix[Double]], y: DenseMatrix[Double]): Double = {
     val actualCost = (1.0 / x.rows) * sum(
       for {i <- 0 until x.rows - 1
-           yPred = thetha(x(i, ::).inner, thetas)._1
+           pred = thetha(x(i, ::).inner, thetas)._1
            yi = y(i, ::).inner
-      }
-        yield sum(loss(yi, yPred)))
-
-    if (regularize) {
-      actualCost + thetas.map(t => sum(sum(pow(t(::, 1 to -1), 2), Axis._0))).sum * (lambda / (2.0 * x.rows))
-    }
-    else actualCost
+      } yield sum(loss(yi, pred)))
+    actualCost
   }
 
   def sigmoidOutputToDerivative(x: DenseVector[Double]): DenseVector[Double] = x :* (-x + 1.0)
@@ -129,11 +122,11 @@ class NeuralNetwork(name: String = "test",train: DenseMatrix[Double], labels: De
     mat.map(_ :/ train.rows.toDouble)
   }
 
-  def train(learning_rate: Double = 0.8, maxEpoch: Int = 1000, lambda: Double = 0.05, read_weights: Boolean = false): Unit = {
+  def train(learning_rate: Double = 0.8, maxEpoch: Int = 1000, read_weights: Boolean = false): Unit = {
 
     if (read_weights) weights = open(name)
 
-    var cost_ = cost(trainPadded, weights, y, lambda = lambda)
+    var cost_ = cost(trainPadded, weights, y)
 
     var epoch = 0
 
@@ -147,11 +140,11 @@ class NeuralNetwork(name: String = "test",train: DenseMatrix[Double], labels: De
         weights(l)(::, 1 to -1) := weights(l)(::, 1 to -1) - mat(l)(::, 1 to -1) * learning_rate
       }
 
-      cost_ = cost(trainPadded, weights, y, lambda = lambda)
+      cost_ = cost(trainPadded, weights, y)
       println(s"cost $cost_ at epoch $epoch")
 
+      // save weights every 100 epochs to be safe
       if (epoch % 100 == 0) {
-        val y: List[Int] = predict(train)
         save(weights)
       }
       epoch += 1

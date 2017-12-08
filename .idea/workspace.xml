@@ -2,30 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ffeee08-9692-4b58-832a-5f5543607232" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/data/bezdekIris.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/data/digits.csv.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/data/bezdekIris.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/data/digits.csv.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/data/digits_labels.csv.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/data/digits_train.csv.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/test/PerceptronDemo$.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/data/digits_labels.csv.gz" afterPath="$PROJECT_DIR$/src/main/scala/test/digits_labels.csv.gz" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/data/digits_train.csv.gz" afterPath="$PROJECT_DIR$/src/main/scala/test/digits_train.csv.gz" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$cost$1.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$3.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$4.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$5$$anonfun$apply$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$5$$anonfun$apply$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$5.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$backpropagate$1$$anonfun$apply$mcVI$sp$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$backpropagate$1$$anonfun$apply$mcVI$sp$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$backpropagate$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$backpropagate$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$backpropagate$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$backpropagate$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$backpropagate$3.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$backpropagate$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$makeZeroMatrix$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$makeZeroMatrix$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$predict$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$predict$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$train$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork$$anonfun$train$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/NeuralNetwork.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/test/BigDigit$.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/test/BigDigit$.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/test/LinearRegressionDemo.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/test/LinearRegressionDemo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/Perceptron$$anonfun$fit$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/Perceptron$$anonfun$fit$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/Perceptron$$anonfun$predict$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/Perceptron$$anonfun$predict$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/Perceptron.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/nonlinear/Perceptron.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/test/NeuralNetworkDemo.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/test/NeuralNetworkDemo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/test/PerceptronDemo$$anonfun$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/test/PerceptronDemo$$anonfun$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/test/PerceptronDemo.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/test/PerceptronDemo.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/linearmodels/LogisticRegression.scala" afterPath="$PROJECT_DIR$/src/main/scala/linearmodels/LogisticRegression.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/nonlinear/NeuralNetwork.scala" afterPath="$PROJECT_DIR$/src/main/scala/nonlinear/NeuralNetwork.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/nonlinear/Perceptron.scala" afterPath="$PROJECT_DIR$/src/main/scala/nonlinear/Perceptron.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/test/BigDigit.scala" afterPath="$PROJECT_DIR$/src/main/scala/test/BigDigit.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/test/LinearRegressionDemo.scala" afterPath="$PROJECT_DIR$/src/main/scala/test/LinearRegressionDemo.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/test/LogisticRegressionDemo.scala" afterPath="$PROJECT_DIR$/src/main/scala/test/LogisticRegressionDemo.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/test/NeuralNetworkDemo.scala" afterPath="$PROJECT_DIR$/src/main/scala/test/NeuralNetworkDemo.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/test/PerceptronDemo.scala" afterPath="$PROJECT_DIR$/src/main/scala/test/PerceptronDemo.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/test/models/BigDigit-theta1.csv" afterPath="$PROJECT_DIR$/src/main/scala/test/models/BigDigit-theta1.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/test/models/BigDigit-theta2.csv" afterPath="$PROJECT_DIR$/src/main/scala/test/models/BigDigit-theta2.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/test/models/test-theta1.csv" afterPath="$PROJECT_DIR$/src/main/scala/test/models/test-theta1.csv" />
@@ -52,21 +50,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="PerceptronDemo.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/test/PerceptronDemo.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding>
+                <marker date="1512753384203" expanded="false" signature="21:60" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="BigDigit.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/test/BigDigit.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
               <caret line="16" column="70" lean-forward="false" selection-start-line="16" selection-start-column="70" selection-end-line="16" selection-end-column="70" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DigitLoader.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/test/DigitLoader.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="14" column="34" lean-forward="false" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -82,21 +82,53 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NeuralNetwork.scala" pinned="false" current-in-tab="true">
+      <file leaf-file-name="NeuralNetwork.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/nonlinear/NeuralNetwork.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="101" column="19" lean-forward="true" selection-start-line="101" selection-start-column="19" selection-end-line="101" selection-end-column="19" />
+            <state relative-caret-position="2788">
+              <caret line="171" column="0" lean-forward="true" selection-start-line="171" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NeuralNetworkDemo.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/test/NeuralNetworkDemo.scala">
+      <file leaf-file-name="LinearRegressionDemo.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/test/LinearRegressionDemo.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+            <state relative-caret-position="374">
+              <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LogisticRegression.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/linearmodels/LogisticRegression.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="56" column="32" lean-forward="true" selection-start-line="56" selection-start-column="32" selection-end-line="56" selection-end-column="32" />
+              <folding>
+                <element signature="e#22#74#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Perceptron.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/nonlinear/Perceptron.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="372">
+              <caret line="40" column="56" lean-forward="true" selection-start-line="40" selection-start-column="56" selection-end-line="40" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LinearRegression.scala" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/linearmodels/LinearRegression.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="56" lean-forward="true" selection-start-line="15" selection-start-column="56" selection-end-line="15" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -145,11 +177,11 @@
         <option value="$PROJECT_DIR$/src/main/scala/test/BigDigit.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/linearmodels/LogisticRegression.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/test/LogisticRegressionDemo.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/test/LinearRegressionDemo.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/test/PerceptronDemo.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/test/NeuralNetworkDemo.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/nonlinear/Perceptron.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/test/NeuralNetworkDemo.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/nonlinear/NeuralNetwork.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/test/LinearRegressionDemo.scala" />
       </list>
     </option>
   </component>
@@ -287,7 +319,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="scala" type="462c0819:PsiDirectoryNode" />
-              <item name="nonlinear" type="462c0819:PsiDirectoryNode" />
+              <item name="linearmodels" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="numscala" type="b2602c69:ProjectViewProjectNode" />
@@ -829,16 +861,15 @@
       <workItem from="1512625610759" duration="30000" />
       <workItem from="1512740545045" duration="599000" />
       <workItem from="1512749601226" duration="1923000" />
-      <workItem from="1512752570097" duration="3731000" />
+      <workItem from="1512752570097" duration="4667000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21986000" />
+    <option name="totallyTimeSpent" value="22922000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -849,7 +880,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38369566" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38369566" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1030,16 +1061,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/linearmodels/LogisticRegression.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-110">
-          <caret line="40" column="43" lean-forward="true" selection-start-line="40" selection-start-column="43" selection-end-line="40" selection-end-column="43" />
-          <folding>
-            <element signature="e#22#74#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/utilities/Utilities.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -1056,18 +1077,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/test/LinearRegressionDemo.scala">
+    <entry file="jar://$USER_HOME$/.sbt/boot/scala-2.10.6/lib/scala-compiler.jar!/scala/tools/nsc/backend/icode/BBFlags.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+        <state relative-caret-position="153">
+          <caret line="9" column="12" lean-forward="false" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/test/PerceptronDemo.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state relative-caret-position="153">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
             <marker date="1512753384203" expanded="false" signature="21:60" ph="..." />
           </folding>
@@ -1082,16 +1103,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/test/LogisticRegressionDemo.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="e#14#53#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/test/IrisLoader.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -1100,10 +1111,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.sbt/boot/scala-2.10.6/lib/scala-compiler.jar!/scala/tools/nsc/backend/icode/BBFlags.class">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/nonlinear/NeuralNetwork.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="12" lean-forward="false" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+        <state relative-caret-position="2788">
+          <caret line="171" column="0" lean-forward="true" selection-start-line="171" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/test/LinearRegressionDemo.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/linearmodels/LogisticRegression.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="56" column="32" lean-forward="true" selection-start-line="56" selection-start-column="32" selection-end-line="56" selection-end-column="32" />
+          <folding>
+            <element signature="e#22#74#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/test/LogisticRegressionDemo.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/test/NeuralNetworkDemo.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="22" column="42" lean-forward="true" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/nonlinear/Perceptron.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="40" column="56" lean-forward="true" selection-start-line="40" selection-start-column="56" selection-end-line="40" selection-end-column="56" />
           <folding />
         </state>
       </provider>
@@ -1112,30 +1165,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="56" lean-forward="true" selection-start-line="15" selection-start-column="56" selection-end-line="15" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/nonlinear/Perceptron.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="48" column="3" lean-forward="true" selection-start-line="48" selection-start-column="3" selection-end-line="48" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/test/NeuralNetworkDemo.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/nonlinear/NeuralNetwork.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="101" column="19" lean-forward="true" selection-start-line="101" selection-start-column="19" selection-end-line="101" selection-end-column="19" />
           <folding />
         </state>
       </provider>

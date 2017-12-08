@@ -15,9 +15,9 @@ class LinearRegressionDemo extends App{
 
     linearRegression.fit(X, y)
 
-    val yPred = linearRegression.predict(X)
+    val pred = linearRegression.predict(X)
 
-    val error = sum(pow(yPred - y, 2)) / y.length
+    val error = sum(pow(pred - y, 2)) / y.length
 
     error
   }
