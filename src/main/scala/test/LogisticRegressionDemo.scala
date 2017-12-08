@@ -27,6 +27,5 @@ class LogisticRegressionDemo extends App{
 
 
     logisticRegression.ls
-    //  println(y.toArray.toList.zip(yPred.toArray.toList))
   }
 }

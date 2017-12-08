@@ -9,15 +9,14 @@ class NeuralNetworkDemo extends App{
     val (labels, all_data) = BigDigit.load()
     val (train, train_y, test, test_y) = Utilities.train_test_split(all_data, labels)
 
-    // training set doesnt have one of each
 
     /**
       * 2 Hidden Layers
       * 25 Nodes per layer
       */
-    val neuralNetwork = new NeuralNetwork(name = "test", all_data, labels, hiddenLayers = 1, nodesPerLayer = 30)
-//      neuralNetwork.train(maxEpoch = 10, read_weights = true)
-    neuralNetwork.train(maxEpoch = 100)
+    val neuralNetwork = new NeuralNetwork(name = "BigDigit", all_data, labels, hiddenLayers = 2, nodesPerLayer = 25)
+      neuralNetwork.train(maxEpoch = 1, read_weights = true)
+//    neuralNetwork.train(maxEpoch = 100)
     val yPred = neuralNetwork.predict(test)
     val yy: Seq[Double] = neuralNetwork.ls
     val x = yy.indices.map(_.toDouble)
