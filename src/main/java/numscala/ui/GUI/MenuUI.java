@@ -83,6 +83,11 @@ public class MenuUI {
         primaryStage.show();
     }
 
+    /**
+     * Handle button click
+     * @param primaryStage
+     * @param buttonName
+     */
     public void handleMenuSelection(Stage primaryStage, String buttonName) {
         NonLinearModelUI nonLinearModelUI = new NonLinearModelUI();
         LinearModelUI linearModelUI = new LinearModelUI();

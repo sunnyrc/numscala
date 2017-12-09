@@ -17,22 +17,30 @@ class NeuralNetwork(name: String = "test",train: DenseMatrix[Double], labels: De
 
   var ls = new ListBuffer[Double]()
 
-  // Pad the training data (Thanks Aj Piti)
+  // Pad the training data
   val trainPadded: DenseMatrix[Double] = DenseMatrix.horzcat(DenseMatrix.ones[Double](train.rows, 1), train)
 
   var weights: Array[DenseMatrix[Double]] = (0 to hiddenLayers).map(initLayers).toArray
 
-  // Initialize all the layers
-  // Layer 0 being the first hidden layer so we use inputSize
-  // Last layer needs to match the output size (label Set)
-  // Any other layer we use the same nodesPerLayer + 1
+  /**
+    * Initialize all the layers
+    * Layer 0 being the first hidden layer so we use inputSize
+    * layer needs to match the output size (label Set)
+    * Any other layer we use the same nodesPerLayer + 1
+    * @param n
+    * @return
+    */
   def initLayers(n: Int): DenseMatrix[Double] = n match {
     case 0 => DenseMatrix.rand(nodesPerLayer, inputSize + 1, rand = Rand.gaussian)
     case `hiddenLayers` => DenseMatrix.rand(outputSize, nodesPerLayer + 1, rand = Rand.gaussian)
     case _ => DenseMatrix.rand(nodesPerLayer, nodesPerLayer + 1, rand = Rand.gaussian)
   }
 
-  // Put one at the label column in that row
+  /**
+    * Put one at the label column in that row
+    * @param xs
+    * @return
+    */
   def binarizeData(xs: DenseVector[Int]): DenseMatrix[Double] = {
     val ys = DenseMatrix.zeros[Double](xs.length, outputSize)
     xs.data.zipWithIndex.foreach {
@@ -40,7 +48,6 @@ class NeuralNetwork(name: String = "test",train: DenseMatrix[Double], labels: De
     }
     ys
   }
-
 
   def chooseFunction(x: DenseVector[Double]): DenseVector[Double] = {
     if (func == "sigmoid") sigmoid(x)
@@ -56,10 +63,21 @@ class NeuralNetwork(name: String = "test",train: DenseMatrix[Double], labels: De
     else throw new Exception
   }
 
-  // Log Loss function
+  /**
+    * Log loss function
+    * @param y
+    * @param pred
+    * @return
+    */
   def loss(y: DenseVector[Double], pred: DenseVector[Double]): DenseVector[Double] = (-y :* log(pred)) :- ((-y + 1.0) :* log(-pred + 1.0))
 
-  // Passing the layers through activation function
+  /**
+    * Passing the layers through activation function
+    * @param x
+    * @param thetas
+    * @param vecs
+    * @return
+    */
   def thetha(x: DenseVector[Double], thetas: Array[DenseMatrix[Double]], vecs: List[DenseVector[Double]] = List()): (DenseVector[Double], List[DenseVector[Double]]) = {
     if (thetas.isEmpty) (x(1 to -1), vecs)
     else {
@@ -68,7 +86,12 @@ class NeuralNetwork(name: String = "test",train: DenseMatrix[Double], labels: De
     }
   }
 
-  // Passing the layers through activation function
+  /**
+    * Passing the layers through activation function
+    * @param x
+    * @param thetas
+    * @return
+    */
   def thetha(x: DenseMatrix[Double], thetas: Array[DenseMatrix[Double]]): DenseMatrix[Double] = {
     if (thetas.isEmpty) x(1 to -1, ::).t
     else {

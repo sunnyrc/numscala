@@ -4,8 +4,12 @@ import breeze.linalg.{DenseMatrix, DenseVector}
 
 import scala.collection.mutable.ListBuffer
 
-// One layer, can only perform Binary Classifications
-// Threshold should be almost always 0.5
+/**
+  * One layer, can only perform Binary Classifications
+  * Threshold should be almost always 0.5
+  * @param learning_rate
+  * @param threshold
+  */
 class Perceptron(learning_rate: Double = 0.1, threshold: Double = 0.5) {
 
   var weights: DenseVector[Double] = DenseVector[Double]()

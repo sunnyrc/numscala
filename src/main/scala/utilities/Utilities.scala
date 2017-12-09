@@ -5,8 +5,13 @@ import breeze.numerics.{ceil, log}
 
 object Utilities {
 
-  // e = value and i = index
-  // Want to check if e equal to predicted value
+  /**
+    * e = value and i = index
+    * Want to check if e equal to predicted value
+    * @param y
+    * @param yPred
+    * @return
+    */
   def accuracy(y: DenseVector[Int], yPred: DenseVector[Int]): Double = {
     y.toArray.zipWithIndex.count {
       case (e, i) => e == yPred(i)

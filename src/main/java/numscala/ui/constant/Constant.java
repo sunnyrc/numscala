@@ -5,9 +5,6 @@ package numscala.ui.constant;
  */
 public class Constant {
 
-    public static final String[] NAVIGATION_ITEMS = new String[]{"Linear Regression", "Logistic Regression",
-                                                                "Neural Network", "Perceptron"};
-
     public static final int MENU_PREF_WIDTH = 200;
 
     public static final int MENU_PREF_HEIGHT = 240;

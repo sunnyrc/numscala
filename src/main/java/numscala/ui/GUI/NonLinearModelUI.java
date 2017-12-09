@@ -111,11 +111,11 @@ public class NonLinearModelUI {
 
                         if (!dataWrapper.getParam().equals("Loss")) {
                             label = new Label("Epoch: " + data.getXValue() +
-                                    "\n" + dataWrapper.getParam() + ": " + data.getYValue() +
-                                    "\nAccuracy: " + accuracy);
+                                                "\n" + dataWrapper.getParam() + ": " + data.getYValue() +
+                                                "\nAccuracy: " + accuracy);
                         } else {
                             label = new Label("Epoch: " + data.getXValue() +
-                                    "\n" + dataWrapper.getParam() + ": " + data.getYValue());
+                                                "\n" + dataWrapper.getParam() + ": " + data.getYValue());
 
                         }
                         grid.add(label, 1, 0);
