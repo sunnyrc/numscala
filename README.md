@@ -1,7 +1,10 @@
 # Numscala
-The aim was to make an easy to access scikit learn like library for Scala.
+The aim was to make an easy to access machine learning library for Scala similar to scikit.
 
-There are two sections to numscala. One's written in scala and the other in java for demo purposes.
+- To Run
+  - Run Main class in java/numscala/ui/Main.java
+  
+There are two sections to numscala. One is written in Scala and the other in Java for demo purposes.
 
 - Scala
   - Activation Functions - Contains sigmoid, softplus and tanh function.
@@ -11,3 +14,9 @@ There are two sections to numscala. One's written in scala and the other in java
   - Utilities - Contains one file which consists of functions like Accuracy, Log Loss and Splitting the Training and Testing set. 
   
 - Java
+  - Scala Intepreter - Contains service to convert Seq<Object> and Object from invoking Scala functions to Java's List<Double> and Double
+  - MenuUI - Handles selection of model to train
+  - NonGraphableUI - Handles GUI for Linear Regression, this model can't produce a graph
+  - NonLinearModelUI - Handles GUI for Logistic Regression, Perceptron and Neural Network
+  - View mode - Allows for more ease in observing a graph
+  - Hover Mode - Allows to navigate the graph at the cost of it looking funky (The number of data points is reduced by a factor of 2 to counteract this problem)

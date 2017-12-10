@@ -17,7 +17,6 @@ import test.NeuralNetworkDemo;
 import test.PerceptronDemo;
 
 import java.util.List;
-import java.util.Objects;
 
 /**
  * Created by Trung on 11/30/2017.
@@ -89,8 +88,8 @@ public class MenuUI {
      * @param buttonName
      */
     public void handleMenuSelection(Stage primaryStage, String buttonName) {
-        NonLinearModelUI nonLinearModelUI = new NonLinearModelUI();
-        LinearModelUI linearModelUI = new LinearModelUI();
+        NonGraphableUI nonGraphableUI = new NonGraphableUI();
+        GraphableUI graphableUI = new GraphableUI();
 
         Scene scene = null;
         Tuple2<Seq<Object>, Object> axis;
@@ -104,7 +103,7 @@ public class MenuUI {
 
             dataWrapper.setParam("Error");
             dataWrapper.setDoubleInfo(doubleError);
-            HBox hBox = linearModelUI.drawInfo(primaryStage, dataWrapper);
+            HBox hBox = graphableUI.drawInfo(primaryStage, dataWrapper);
 
             if (hBox.getScene() == null) scene = new Scene(hBox);
             else scene = hBox.getScene();
@@ -126,7 +125,7 @@ public class MenuUI {
             dataWrapper.setAxis(ys);
             dataWrapper.setDoubleInfo(accuracy);
 
-            HBox hBox = nonLinearModelUI.drawChartViewMode(primaryStage, dataWrapper);
+            HBox hBox = nonGraphableUI.drawChartViewMode(primaryStage, dataWrapper);
             scene = new Scene(hBox);
         } else {
             Seq<Object> logisticAxis = logisticRegressionDemo.getAxis();
@@ -139,7 +138,7 @@ public class MenuUI {
             dataWrapper.setParam("Loss");
             dataWrapper.setDoubleInfo(0D);
 
-            HBox hBox = nonLinearModelUI.drawChartViewMode(primaryStage, dataWrapper);
+            HBox hBox = nonGraphableUI.drawChartViewMode(primaryStage, dataWrapper);
             scene = new Scene(hBox);
         }
         primaryStage.setScene(scene);

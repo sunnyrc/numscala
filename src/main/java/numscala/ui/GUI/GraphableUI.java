@@ -14,7 +14,7 @@ import numscala.ui.model.DataWrapper;
 /**
  * Created by Trung on 11/30/2017.
  */
-public class LinearModelUI {
+public class GraphableUI {
 
     /**
      * Show info

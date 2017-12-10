@@ -23,7 +23,7 @@ import java.util.List;
 /**
  * Created by Trung on 11/29/2017.
  */
-public class NonLinearModelUI {
+public class NonGraphableUI {
 
     /**
      * Draw chart, return HBox Object
