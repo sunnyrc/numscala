@@ -1,9 +1,11 @@
 # Numscala
 The aim was to make an easy to access machine learning library for Scala similar to scikit.
 
-- To Run
-  - Run Main class in java/numscala/ui/Main.java
-  
+To Run
+```
+Run Main class in java/numscala/ui/Main.java
+```
+
 There are two sections to numscala. One is written in Scala and the other in Java for demo purposes.
 
 - Scala
